@@ -43,19 +43,16 @@ def compmidtrule(lowerlimit, upperlimit, redc, function):
         
 # Zero initializing         
     sumf = 0;
-    x_array = [0]*(redc + 1)
+    x_array = [0]*(redc + 2);
     
 # Grid spacing
     h = (upperlimit - lowerlimit)/(redc + 2);
     
-# Integration Domain Generation
-    for i in range(-1, redc - 1):
+# Integration Domain Generation & sum aproximation
+    for i in range(-1, redc + 2):
         x_array[i] = lowerlimit + (i + 1)*h;
+        sumf = sumf + function(x_array[i]);
 
-# Main loop - sum aproximation
-    for j in range(0, (redc/2)):
-        sumf = sumf + function(x_array[2*j]);
-        
-    integ = 2*h*sumf;
+    integ = h*sumf;
     
     return(integ);
