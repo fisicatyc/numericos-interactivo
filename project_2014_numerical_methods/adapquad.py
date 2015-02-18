@@ -11,7 +11,7 @@
     
     Inputs: lowerlimit - float or integer - integration interval element.
             upperlimit - float or integer - integration interval element.
-            tol - float - desired error tolerance in calculated value.
+            tol_val - float - desired error tolerance in calculated value.
             n - integer - numbers of levels or subintervals to generate.
             function - function type object - evaluates f(x) at x.
             
@@ -34,7 +34,7 @@
     Date: 29/12/2014.
 """
 
-def adapquad (lowerlimit, upperlimit, tol, n, function):
+def adapquad (lowerlimit, upperlimit, tol_val, n, function):
     
 # Initial input error verification
     test = lambda: None;
@@ -43,32 +43,32 @@ def adapquad (lowerlimit, upperlimit, tol, n, function):
         
 # Zero initializing - list Type   
     tol = [0]*n;
-    a = tol;
-    h = tol;
-    fa = tol;
-    fc = tol;
-    fb = tol;
-    s = tol;
-    l = tol;
+    a = [0]*n;
+    h = [0]*n;
+    fa = [0]*n;
+    fc = [0]*n;
+    fb = [0]*n;
+    s = [0]*n;
+    l = [0]*n;
     
 # Initial value assignation - Definition of spatial grid size
     app = 0;
     i = 1;
-    tol[i-1] = 10*tol;
+    tol[i-1] = 10*tol_val;
     a[i-1] = lowerlimit;
     h[i-1] = (upperlimit - lowerlimit)/2;
     fa[i-1] = function(lowerlimit);
-    fc[i-1] = function(lowerlimit + h);
+    fc[i-1] = function((lowerlimit + h[0]));
     fb[i-1] = function(upperlimit);
-    s[i-1] = h*(fa + 4*fc + fb)/3; # Simpson rule - can be change with other rule
+    s[i-1] = h[0]*(fa[0] + 4*fc[0] + fb[0])/3; # Simpson rule - can be change with other rule
     l[i-1] = 1;
 
 # Main loop reasigns variables for each subinterval generated
     while i>0:
         fd = function(a[i-1] + h[i-1]/2);
         fe = function(a[i-1] + 3*h[i-1]/2);
-        s1 = h*(fa[i-1] + 4*fd + fc[i-1])/6;
-        s2 = h*(fc[i-1] + 4*fe + fb[i-1])/6;
+        s1 = h[i-1]*(fa[i-1] + 4*fd + fc[i-1])/6;
+        s2 = h[i-1]*(fc[i-1] + 4*fe + fb[i-1])/6;
         v1 = a[i-1];
         v2 = fa[i-1];
         v3 = fc[i-1];
