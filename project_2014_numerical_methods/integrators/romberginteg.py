@@ -10,16 +10,16 @@
     
     Inputs: lowerlimit - float - First element in integration interval
             upperlimit - float - Last element in integration interval
-            redc - integer - Number of subintervals
+            subinterv - positive integer - Number of subintervals
             function - lambda object type - evaluates f(x) at x
             
-    Outputs: R - float - double integration aproximation.
+    Outputs: R - list object - Romberg table - integration aproximation.
     
-    Example code: R = romberginteg(-3.15, 6.2, 8, (lambda x: 2*x**3 + 4.3));
+    Example code: R = romberginteg(-3.15, 6.2, 10, (lambda x: 2*x**3 + 4.3));
                   
     Dependencies: None.
     
-    Version: 1.1 for Python 3.4
+    Version: 1.5 for Python 3.4
     
     Definition and structure were taken from:
         Richard L. Burden, J. Douglas Faires. "Numerical Analysis" 9th ed.
@@ -29,31 +29,36 @@
     Author: J.J. Cadavid - SFTC - EAFIT University.
     Contact: jcadav22@eafit.edu.co
     
-    Date: 29/12/2014.
+    Date: 19/02/2015.
 """
 
-def romberginteg(lowerlimit, upperlimit, redc, function):
-    
+def romberginteg(lowerlimit, upperlimit, subinterv, function):
+
+# Input verification    
     test = lambda: None;
     if isinstance(function,type(test)) == 0:
         raise Exception("function must be lambda object-type");
-    
-    n = redc - 1;
-    R = [[ 0 for i in range(n) ] for j in range(2)];
+
+# List of list assignation    
+    R = [[ 0 for i in range(subinterv+1) ] for j in range(subinterv+1)];
+
+# Spatial grid size
     h = (upperlimit - lowerlimit);
-    R[0][0] = h/2*(function(upperlimit) + function(lowerlimit));
-    
-    sumf = 0;
-    for i in range(2, (redc + 2)):
-        for j in range(1, (2**(i - 2))):
-            sumf = sumf + function(lowerlimit + (j - 0.5)*h);
-            
-        R[1][0] = 0.5*(R[0][0] + h*sumf);
+
+# First Seed Approximation
+    R[0][0] = 0.5*h*(function(upperlimit) + function(lowerlimit));
+
+# Main Loop -> Composite Trapezoide approx. -> Extrapolation
+    for i in range(1, (subinterv + 1)):
+        h = 0.5 * h;
+        sumf = 0.0;
+        for j in range( 1, 2**i, 2 ):
+            sumf = sumf + function( lowerlimit + j * h );
+
+        R[i][0] = (0.5 * R[i-1][0]) + (sumf * h); # Increase result accuracy 
+
+        for k in range( 1, i + 1 ):
+            R[i][k] = R[i][k-1] + ( R[i][k-1] - R[k-1][k-1] ) / ( 4**i - 1 )
         
-        for k in range(2, i):
-            R[1][k-1] = R[1][k-2] + (R[1][k-2] - R[0][k-2])/(4**(k-1) - 1);
-        
-        h = h/2;
-        R[0] = R[1];
-        
-    return(R);        
+    return(R);  
+  

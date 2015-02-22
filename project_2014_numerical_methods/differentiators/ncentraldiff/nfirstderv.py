@@ -18,8 +18,12 @@
                    
     Method output: diff_array - list - list of derivated values in (a,b).              
     
+<<<<<<< HEAD
     call sequence example: function = lambda x: 0.5*x**3+5*x*2+6*x+6.33;
                            ncentraldiff.nfirstderv(4, 0, 2, function);
+=======
+    call sequence example: ncentraldiff.nfirstderv(4, 0, 2, (lambda x: 4*sin(x)**2));
+>>>>>>> origin/master
                   
     Dependencies: None.
     
@@ -46,11 +50,19 @@ def nfirstderv(n, lowerlimit, upperlimit, function):
 # Initilization
     diff_array = [0]*(n - 1);
 
+<<<<<<< HEAD
 # Assignations of spatial domain
     h = upperlimit-lowerlimit;
     x_array = [lowerlimit + x*h/n for x in range(n+1)];     
         
 # Non Centered First Derivative approximation
+=======
+# Assignations        
+    h = upperlimit-lowerlimit;
+    x_array = [lowerlimit + x*h/n for x in range(n+1)];     
+        
+# First Derivative
+>>>>>>> origin/master
     for i in range(n-2):
         diff_array[i] = (function(x_array[i] + h) - function(h))/h;
     return(diff_array);        

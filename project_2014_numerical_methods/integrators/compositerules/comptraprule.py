@@ -15,7 +15,7 @@
             
     Outputs: integ - float - defined integral aproximation
     
-    Example line: compmidtrule(-3.15, 6.2, 8, (lambda x: 2*x**3 + 4.3));
+    Example line: integ = comptraprule(-2, 2, 40, (lambda x: 3*x**4));
                   
     Dependencies: None.
     
@@ -34,29 +34,24 @@
 
 def comptraprule (lowerlimit, upperlimit, redc, function):
 
-# Initial input error verification   
+#  Input error verification   
     if redc % 2 != 0:
         raise Exception('Reduced inverval - redc- must be an even integer');
         
     test = lambda: None;
     if isinstance(function,type(test)) == 0:
         raise Exception("function must be lambda object-type");
+        
 # Zero initialing        
-    sumf = 0;
-    x_array = [0]*(redc)
+    sumf = 0.0;
         
 # Space grid size
     h = (upperlimit - lowerlimit)/redc;
-    fb = function(upperlimit);
-    
-# Integration Domain generation
-    for i in range(redc - 1):
-        x_array[i] = lowerlimit + i*h;
+ 
+# Main loop - Composite trapezoidal rule approximation .
+    for k in range(1, redc):
+        sumf = sumf + 2*function(lowerlimit + k*h);
         
-# Main loop - sum
-    for j in range(1,(redc - 2)):
-        sumf = sumf + (function(x_array[j]) + fb);
-        
-    integ = h/2*(function(lowerlimit) + 2*sumf);
+    integ = 0.5*h*(sumf + function(upperlimit) + function(lowerlimit));
     
     return(integ);

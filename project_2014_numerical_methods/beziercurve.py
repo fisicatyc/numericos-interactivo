@@ -40,13 +40,13 @@ def beziercurve (endpoints, leftguide, rightguide, n=10):
     
 # Zero initializing - list type
     a0 = [0]*n;
-    a1 = a0;
-    a2 = a1;
-    a3 = a2;
-    b0 = a3;
-    b1 = b0;
-    b2 = b1;
-    b3 = b2;   
+    a1 = [0]*n;
+    a2 = [0]*n;
+    a3 = [0]*n;
+    b0 = [0]*n;
+    b1 = [0]*n;
+    b2 = [0]*n;
+    b3 = [0]*n;   
     
 # Initial value assignation
     nestedlist = [endpoints, leftguide, rightguide]; # Nested list for compact variable usage.
