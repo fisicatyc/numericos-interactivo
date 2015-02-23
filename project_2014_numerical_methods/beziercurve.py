@@ -49,8 +49,8 @@ def beziercurve (endpoints, leftguide, rightguide, n=10):
     b3 = [0]*n;   
     
 # Initial value assignation
-    nestedlist = [endpoints, leftguide, rightguide]; # Nested list for compact variable usage.
-    coorlist = [ [ 0 for i in range(2) ] for j in range(3) ];
+    #nestedlist = [endpoints, leftguide, rightguide]; # Nested list for compact variable usage.
+    #coorlist = [ [ 0 for i in range(2) ] for j in range(3) ];
     
 # Array generation for equal separated values
     for i in range(len(nestedlist) - 1):
