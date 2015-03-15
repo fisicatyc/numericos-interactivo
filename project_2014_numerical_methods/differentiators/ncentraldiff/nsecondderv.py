@@ -18,12 +18,8 @@
                    
     Method output: diff_array - list - list of derivated values in (a,b).              
     
-<<<<<<< HEAD
     call sequence example: function = lambda x: 0.5*x**3+5*x*2+6*x+6.33;
-                           ncentraldiff.nsecondderv(4, 0, 2, function);
-=======
-    call sequence example: ncentraldiff.nfirstderv(4, 0, 2, (lambda x: 4*sin(x)**2));
->>>>>>> origin/master
+                           nsecondderv(4, 0, 2, function);
                   
     Dependencies: None.
     
@@ -42,15 +38,12 @@
 
 def nsecondderv(n, lowerlimit, upperlimit, function):
 
-<<<<<<< HEAD
 # Input check
-=======
->>>>>>> origin/master
+
     test = lambda: None;
     if isinstance(function,type(test)) == 0:
         raise Exception("function must be lambda object-type");
         
-<<<<<<< HEAD
 # Initilization
     diff_array = [0]*(n - 1);
     
@@ -59,19 +52,13 @@ def nsecondderv(n, lowerlimit, upperlimit, function):
     x_array = [lowerlimit + x*h/n for x in range(n+1)];
     
 # Non centered Second Derivative approximation
-=======
+
     h = upperlimit-lowerlimit;
     x_array = [lowerlimit + x*h/n for x in range(n+1)];
     
     diff_array = [0]*(n - 1);             
 
->>>>>>> origin/master
     for i in range(n-2):
         diff_array[i] = (function(x_array[i] + 2*h) - \
                         2*function(x_array[i] + h) + function(x_array[i]))/h**2;
     return(diff_array);
-<<<<<<< HEAD
-            
-=======
-        
->>>>>>> origin/master
