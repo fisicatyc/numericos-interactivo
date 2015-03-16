@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &mdash; Interactive-Numeric 1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Interactive-Numeric 1.2 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <p>Project Summary</p>
+<p>Chapter #1:
+Busqueda de raices</p>
+<p>En este modulo se aplican los métodos de busqueda de la raices de una función, lo cual vendria a ser la busqueda de todo elemento x que pertenezca
+al dominio de la función y que dicha función  cumpla f(x) = 0
+Se pretende que el usuario aplique los métodos a la solución de problemas, para lograr una mejor compresión sobre la temática y se adquieran
+habilidades que faciliten el progreso hacia otros métodos de mayor complejidad.</p>
+<p>Se encuentran los siguientes métodos para la busquedad de raices en una función.</p>
+<blockquote>
+<div>-Bisection Method
+-FixedPoint Method
+-Muller Method
+-PolyRoot Method
+-RegulaFalse Method
+-Secant Method</div></blockquote>
+<p>Chaptert #2:
+Interpoladores</p>
+<p>Este modulo se encarga de la implementación de los metodos de interpolación, que se basa en la problemática de tener n+1 puntos secuenciales,
+donde x0 &lt; x1 &lt; x2 &lt; x3 &lt; ... &lt; xn, y a partir de estos puntos diferentes se va a definir una función polinica que pase por esos puntos.
+Basicamente se esta aproximando p(x)= y a una f(x)= y original, a la cual probablemente no se tiene acceso o conocimiento. Esto se hace con el fin
+de modelar el comportamiento de los puntos anteriores y obtener el &#8220;polinomio interpolante&#8221;.</p>
+<p>Se encuentran los siguientes métodos interpoladores:</p>
+<blockquote>
+<div>-BezierCUrve Method
+-Clampspline Method
+-Derivpol Method
+-Hermitpoly Method
+-Nevilletable Method
+-Newtondivdef Method</div></blockquote>
+<p>Chaptert #3:
+Diferenciadores</p>
+<p>En este modulo se aplican los métodos diferenciadores o tambien conocidos como diferencias finitas. Se van a categorizar como
+diferencias centradas y no centradas, donde la primera define un conjunto de métodos numericos
+basandose en diferencias finitas con paso centrado. Y en los métodos no centrados se define un conjunto de métodos numericos basandose
+en diferencias finitas SIN paso centrado.</p>
+<p>Estas técnicas se emplean muy a menudo en análisis numérico, especialmente en ecuaciones numéricas ordinarias, ecuaciones en diferencias y ecuaciones
+en derivadas parciales. Las aplicaciones habituales suelen ser en los campos de la computación, áreas de la ingeniría térmica o en la
+mecánica de fluidos.</p>
+<p>Se encuentran los siguientes métodos diferenciadores centrados:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>-QCDA or Fourth Centered Difference Aproximation, calculates the fourth</dt>
+<dd>derivative in the interval.</dd>
+<dt>-SCDA or Second Centered Difference Aproximation, calculates the second</dt>
+<dd>derivative in the interval.</dd>
+<dt>-TCDA or Third Centered Difference Aproximation, calculates the third</dt>
+<dd>derivative in the interval.</dd>
+<dt>-QCDA or Fourth Centered Difference Aproximation, calculates the fourth</dt>
+<dd>derivative in the interval.</dd>
+</dl>
+</div></blockquote>
+<p>Se encuentran los siguientes métodos diferenciadores no centrados:</p>
+<blockquote>
+<div>-nfirstderv
+-nsecondderv
+-snfirstderv</div></blockquote>
+<p>Chaptert #4:
+Integradores</p>
+<p>En este modulo se encuentran los métodos integradores que aproximan la funcion f(x) que se va a integrar por medio de polinomios interpolantes
+de diferentes grados, donde los métodos varian según el número de puntos o intervalo que se utilice para dicha aproximación permitiendon calcular
+integrales defindas.</p>
+<p>Exiten varios métodos que permiten realizar el proceso de hallar una integral defina y se dividen eneste proyecto en las siguientes categorias:</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-C<var>losedNewtonCotes</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id1"><span class="problematic" id="id2">*</span></a>Fournodescotes
+<a href="#id3"><span class="problematic" id="id4">*</span></a>simprule
+<a href="#id5"><span class="problematic" id="id6">*</span></a>tesimprule
+<a href="#id7"><span class="problematic" id="id8">*</span></a>trapzrule</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-C<var>ompositeRules</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id9"><span class="problematic" id="id10">*</span></a>Compmidtrule
+<a href="#id11"><span class="problematic" id="id12">*</span></a>compsimrule
+<a href="#id13"><span class="problematic" id="id14">*</span></a>comptraprule</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-D<var>oubleIntegral</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id15"><span class="problematic" id="id16">*</span></a>Gaussblint
+<a href="#id17"><span class="problematic" id="id18">*</span></a>Simpbdlintg</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-O<var>penNewtonCotes</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id19"><span class="problematic" id="id20">*</span></a>Midpointrule
+<a href="#id21"><span class="problematic" id="id22">*</span></a>Onenodeopn
+<a href="#id23"><span class="problematic" id="id24">*</span></a>Thrnodeopn
+<a href="#id25"><span class="problematic" id="id26">*</span></a>twonodeopn</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-T<var>ripleintegral</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id27"><span class="problematic" id="id28">*</span></a>Gausstpllint</td></tr>
+</tbody>
+</table>
+<p>-Adapquad
+-Natspline
+-Romberginted</p>
+</div></blockquote>
+<p>Chaptert #5:
+Extrapoladores.</p>
+<p>Este módulo se encarga de los métodos de exapolación, son métodos cientifico lógicos, que se basan en suponer que el curso de los acontecimientos
+continuara, es decir, afirma que existen unos axiomas y que estos son extrapolables a una nueva situación. La base de la extrapolación son observaciones
+secuenciales realizados en periodos conocidos de tiempo, estas observaciones son luego registradas como variables cuantitativas, medidas con algún tipo de escala.</p>
+<p>Se usan para buscar soluciones a problemas lógicos o enseñar la misma pedagogía, lo cual los convierte en una herramienta muy utilizada en el marco
+profesional y de enseñanza, no son necesariamente exclusorios de los métodos de interpolación y tampoco se pueden considerar únicos.</p>
+<p>Se cuenta con los siguientes métodos:</p>
+<blockquote>
+<div>-Richarexpol o Extrapolación de Richardson</div></blockquote>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/summary.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Semillero de Fisica Teorica y Computacional.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

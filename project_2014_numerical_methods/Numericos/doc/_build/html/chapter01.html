@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Capitulo 01: Búsqueda de raíces &mdash; Interactive-Numeric 1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Interactive-Numeric 1.2 documentation" href="index.html" />
+    <link rel="next" title="Capitulo 02: Interpoladores" href="chapter02.html" />
+    <link rel="prev" title="Bienvenido a la documentación de Numericos Interactivos" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter02.html" title="Capitulo 02: Interpoladores"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Bienvenido a la documentación de Numericos Interactivos"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="capitulo-01-busqueda-de-raices">
+<h1>Capitulo 01: Búsqueda de raíces<a class="headerlink" href="#capitulo-01-busqueda-de-raices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="descripcion-del-metodo">
+<h2>Descripción del método:<a class="headerlink" href="#descripcion-del-metodo" title="Permalink to this headline">¶</a></h2>
+<p>En este módulo se aplican los métodos de búsqueda de la raíces de una función, lo cual vendría a ser la búsqueda de todo elemento x que pertenezca al
+dominio de la función y que dicha función  cumpla f(x) = 0.</p>
+<p>Se pretende que el usuario aplique los métodos a la solución de problemas, para lograr una mejor compresión sobre la temática y se adquieran
+Habilidades que faciliten el progreso hacia otros métodos de mayor complejidad.</p>
+<p>Dentro del paquete rootFinders se encuentran los siguientes métodos para la búsqueda de raíces en una función:</p>
+<blockquote>
+<div>-Bisection Method
+-FixedPoint Method
+-Müller Method
+-PolyRoot Method
+-RegulaFalse Method
+-Secant Method</div></blockquote>
+</div>
+<div class="section" id="sequencia-de-llamado">
+<h2>Sequencia de llamado:<a class="headerlink" href="#sequencia-de-llamado" title="Permalink to this headline">¶</a></h2>
+<p>Cada método corresponde a un archivo de extensión .py, que en el paquete se pueden encontrar como:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">bisection.py, fixedpoint.py, muller.py, polyroot.py, regulafalsi.py, secant.py.</p>
+</div>
+<p>Para ejecutar éstas funciones desde cualquier terminal de Python 3.4, es necesario cargar en memoria el paquete, con la línea:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">from Numericos.lib.rootFinders import *</p>
+</div>
+<p>Éste comando cargará simultaneamente los seis métodos del paquete. Para ejecutar un cálculo, es necesario agregar &#8216;rootFinders.(método)&#8217;,
+y sus respectivos argumentos. En el caso de bisección la sequencia sería:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">rootFinders.bisection((&#8216;6*x-6&#8217;),-5,6,200,0.005);</p>
+</div>
+<p>En el caso de cargar un único método, se utiliza el comando:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">from Numericos.lib.rootFinders import muller</p>
+</div>
+<p>De ésta manera solamente el método de Müller esta disponible para operar. Ésta forma simplifica la forma de llamado.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Capitulo 01: Búsqueda de raíces</a><ul>
+<li><a class="reference internal" href="#descripcion-del-metodo">Descripción del método:</a></li>
+<li><a class="reference internal" href="#sequencia-de-llamado">Sequencia de llamado:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Bienvenido a la documentación de Numericos Interactivos</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="chapter02.html"
+                        title="next chapter">Capitulo 02: Interpoladores</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/chapter01.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter02.html" title="Capitulo 02: Interpoladores"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Bienvenido a la documentación de Numericos Interactivos"
+             >previous</a> |</li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Semillero de Fisica Teorica y Computacional.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

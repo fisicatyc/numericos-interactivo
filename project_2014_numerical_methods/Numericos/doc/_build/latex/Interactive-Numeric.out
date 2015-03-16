@@ -1,0 +1,54 @@
+\BOOKMARK [0][-]{chapter.1}{Capitulo 00: Introducci\363n}{}% 1
+\BOOKMARK [0][-]{chapter.2}{B\372squeda de Ra\355ces}{}% 2
+\BOOKMARK [1][-]{section.2.1}{M\351todos Cerrados}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{M\351todos Abiertos}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Implementaci\363n del m\351todo:}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Secuencia de llamado:}{chapter.2}% 6
+\BOOKMARK [0][-]{chapter.3}{Capitulo 02: Interpoladores}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Interpolaci\363n de Newton}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.2}{Descripci\363n del m\351todo:}{chapter.3}% 9
+\BOOKMARK [0][-]{chapter.4}{Capitulo 03: Diferenciadores}{}% 10
+\BOOKMARK [1][-]{section.4.1}{Descripci\363n del m\351todo:}{chapter.4}% 11
+\BOOKMARK [0][-]{chapter.5}{Capitulo 04: Integradores}{}% 12
+\BOOKMARK [1][-]{section.5.1}{Descripci\363n del m\351todo:}{chapter.5}% 13
+\BOOKMARK [0][-]{chapter.6}{Capitulo 05: Extrapoladores}{}% 14
+\BOOKMARK [1][-]{section.6.1}{Descripci\363n del m\351todo:}{chapter.6}% 15
+\BOOKMARK [0][-]{chapter.7}{Documentaci\363n e \315ndice de los m\351todos - English Ver.}{}% 16
+\BOOKMARK [1][-]{section.7.1}{adapquad.py}{chapter.7}% 17
+\BOOKMARK [1][-]{section.7.2}{beziercurve.py}{chapter.7}% 18
+\BOOKMARK [1][-]{section.7.3}{bisection.py}{chapter.7}% 19
+\BOOKMARK [1][-]{section.7.4}{clampspline.py}{chapter.7}% 20
+\BOOKMARK [1][-]{section.7.5}{compmidtrule.py}{chapter.7}% 21
+\BOOKMARK [1][-]{section.7.6}{compsimprule.py}{chapter.7}% 22
+\BOOKMARK [1][-]{section.7.7}{comptraprule.py}{chapter.7}% 23
+\BOOKMARK [1][-]{section.7.8}{derivpol.py}{chapter.7}% 24
+\BOOKMARK [1][-]{section.7.9}{FCDA.py}{chapter.7}% 25
+\BOOKMARK [1][-]{section.7.10}{fixedpoint.py}{chapter.7}% 26
+\BOOKMARK [1][-]{section.7.11}{fournodescotes.py}{chapter.7}% 27
+\BOOKMARK [1][-]{section.7.12}{gaussdblint.py}{chapter.7}% 28
+\BOOKMARK [1][-]{section.7.13}{gausstpllint.py}{chapter.7}% 29
+\BOOKMARK [1][-]{section.7.14}{hermitpoly.py}{chapter.7}% 30
+\BOOKMARK [1][-]{section.7.15}{midpointrule.py}{chapter.7}% 31
+\BOOKMARK [1][-]{section.7.16}{muller.py}{chapter.7}% 32
+\BOOKMARK [1][-]{section.7.17}{natspline.py}{chapter.7}% 33
+\BOOKMARK [1][-]{section.7.18}{nevilletable.py}{chapter.7}% 34
+\BOOKMARK [1][-]{section.7.19}{newtondivdef.py}{chapter.7}% 35
+\BOOKMARK [1][-]{section.7.20}{nfirstderv.py}{chapter.7}% 36
+\BOOKMARK [1][-]{section.7.21}{nsecondderv.py}{chapter.7}% 37
+\BOOKMARK [1][-]{section.7.22}{onenodeopn.py}{chapter.7}% 38
+\BOOKMARK [1][-]{section.7.23}{polyroot.py}{chapter.7}% 39
+\BOOKMARK [1][-]{section.7.24}{QCDA.py}{chapter.7}% 40
+\BOOKMARK [1][-]{section.7.25}{regulafalsi.py}{chapter.7}% 41
+\BOOKMARK [1][-]{section.7.26}{richarexpol.py}{chapter.7}% 42
+\BOOKMARK [1][-]{section.7.27}{romberginteg.py}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.28}{SCDA.py}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.29}{secant.py}{chapter.7}% 45
+\BOOKMARK [1][-]{section.7.30}{simpdblintg.py}{chapter.7}% 46
+\BOOKMARK [1][-]{section.7.31}{simprule.py}{chapter.7}% 47
+\BOOKMARK [1][-]{section.7.32}{snfirstderv.py}{chapter.7}% 48
+\BOOKMARK [1][-]{section.7.33}{TCDA.py}{chapter.7}% 49
+\BOOKMARK [1][-]{section.7.34}{tesimprule.py}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.35}{thrnodeopn.py}{chapter.7}% 51
+\BOOKMARK [1][-]{section.7.36}{trapzrule.py}{chapter.7}% 52
+\BOOKMARK [1][-]{section.7.37}{twonodeopn.py}{chapter.7}% 53
+\BOOKMARK [0][-]{section*.3}{Python Module Index}{}% 54

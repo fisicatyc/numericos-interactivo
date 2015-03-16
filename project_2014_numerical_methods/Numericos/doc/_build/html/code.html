@@ -1,0 +1,1406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentación e Índice de los métodos - English Ver. &mdash; Interactive-Numeric 1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Interactive-Numeric 1.2 documentation" href="index.html" />
+    <link rel="prev" title="Capitulo 05: Extrapoladores" href="chapter05.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="chapter05.html" title="Capitulo 05: Extrapoladores"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="documentacion-e-indice-de-los-metodos-english-ver">
+<h1>Documentación e Índice de los métodos - English Ver.<a class="headerlink" href="#documentacion-e-indice-de-los-metodos-english-ver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-adapquad">
+<span id="adapquad-py"></span><h2>adapquad.py<a class="headerlink" href="#module-adapquad" title="Permalink to this headline">¶</a></h2>
+<p>Description: function adapquad is an adaptive quadrature method based on 
+Simpson&#8217;s rule for integration. It can also can be expanded into another 
+integration technique by replacing those lines. It provides more accurate 
+results by dividing the integration interval [a,b] into n subintervals, 
+and again applying integration rule until achiving desired tolerance in 
+each subinterval. If not met, the subinterval is divided again and the 
+process is done again.</p>
+<dl class="docutils">
+<dt>Inputs: lowerlimit - float or integer - integration interval element.</dt>
+<dd>upperlimit - float or integer - integration interval element.
+tol_val - float - desired error tolerance in calculated value.
+n - integer - numbers of levels or subintervals to generate.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Output: app - float - defined integral aproximation.</p>
+<p>Example line: adapquad(-2, 4, 0.005, 10, (lambda x: 4*sin(x)**2));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.1 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical differentiation and integration&#8221;. 
+Cengage Learning. 2010. pp: 220 - 226.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 29/12/2014.</p>
+</div>
+<div class="section" id="module-beziercurve">
+<span id="beziercurve-py"></span><h2>beziercurve.py<a class="headerlink" href="#module-beziercurve" title="Permalink to this headline">¶</a></h2>
+<p>Description: function beziercurve generates an interpolation parametric
+curve using a third order Hermite polynomial and a pair of nodes and
+guidelines. Endpoint slope is calculated with the slope of lines
+tangent to them. Therefore no second or first analytic derivative 
+forms of curve is needed a priori. The fast computation of this interpolant
+allows an interactive way to generate curves. Spatial coordinates are
+the only requiremnt for calculation.</p>
+<dl class="docutils">
+<dt>Inputs: endpoints - list object - includes 4 float values for nodes.</dt>
+<dd>leftguide - list object - includes 4 float values for left node.
+rightguide - list object - includes 4 float values for right node.
+n - integer - optional parameter defines number n+1 elements of list.</dd>
+</dl>
+<p>Output: beziercoeff - list object - Bezier cofficients of polynomial.</p>
+<dl class="docutils">
+<dt>Example code: endpoints = [[3.2, 2.4], [3.6, 0.4]];</dt>
+<dd>leftguide = [[2.8, 7.5], [5.3, 6.4]];
+rightguide = [[8.3, 7.5], [1.6, 2.4]];
+beziercurve (endpoints, leftguide, rightguide, n=10);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.3 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 3 - Interpolation and Polynomial Approximation&#8221;. 
+Cengage Learning. 2010. pp: 166 - 169.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 27/12/2014.</p>
+</div>
+<div class="section" id="module-bisection">
+<span id="bisection-py"></span><h2>bisection.py<a class="headerlink" href="#module-bisection" title="Permalink to this headline">¶</a></h2>
+<p>bisection.py is a function that calculates the roots of a polinomial function
+using the bisection numerical method.</p>
+<dl class="docutils">
+<dt>inputs= rf ; raw function, string of the form a*x+b</dt>
+<dd>a ; left range interval
+b ; right range interval
+n ; number of iterations
+t ; tolerance of calculation</dd>
+</dl>
+<p>output= x ; the aproximated value of x such that f(x)=0</p>
+<p>version: 1.01 for python 2.7</p>
+<p>fast_Code: bisection((&#8216;6*x-6&#8217;),-5,6,200,0.005);</p>
+<p>author: JJ.Cadavid - SFTC - EAFIT University
+date: 24/08/2014.</p>
+</div>
+<div class="section" id="module-clampspline">
+<span id="clampspline-py"></span><h2>clampspline.py<a class="headerlink" href="#module-clampspline" title="Permalink to this headline">¶</a></h2>
+<p>Description: function clampspline generates an interpolant of third order 
+polynomial. Uses knot information of first derivatives in the first and last
+knot. The coefficients are solved using the tridiagonal linear system 
+vectorial equation AX = B by recursion in the strictly diagonally dominant 
+matrix A.</p>
+<dl class="docutils">
+<dt>Inputs: domainpnt - list object - list whose elements are x domain data.</dt>
+<dd>imagepnt - list object - list whose elements are y domain data.
+fstderpnt - list object - first derivative knot information, 2 elements.</dd>
+</dl>
+<p>Outputs: a, b, c, d - Automatic tuple of lists - interpolant coefficients.</p>
+<dl class="docutils">
+<dt>Example code: domainpnt = [0 + (x*(10-0)/5)*x**2 for x in range(6)];</dt>
+<dd>imagepnt = [0 + (x*(10-0)/5)*x**(2*3**0.5) for x in range(6)];
+fstderpnt = [];</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.1 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 3 - Interpolation and Polynomial Approximation&#8221;. 
+Cengage Learning. 2010. pp: 153 - 156.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 27/12/2014.</p>
+</div>
+<div class="section" id="module-compmidtrule">
+<span id="compmidtrule-py"></span><h2>compmidtrule.py<a class="headerlink" href="#module-compmidtrule" title="Permalink to this headline">¶</a></h2>
+<p>Description: function compmidtrule is part of the Composite Integration
+Techniques and can be thought as an upgrated version of midpoint rule
+integration technique that aproximates a defined integal evaluated in [a,b]
+with better presicion in larger intervals. It&#8217;s truncation error is of order
+h^2 and defined by a second order derivative.</p>
+<dl class="docutils">
+<dt>Inputs: lowerlimit - float - defines first limit of integration.</dt>
+<dd>upperlimit - float - defines last limit of integration.
+redc - integer - even integer that defines subintervals.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Outputs: integ - float - defined integral aproximation</p>
+<p>Example line: compmidtrule(-3.15, 6.2, 500, (lambda x: 2*x**3 + 4.3));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 203 - 209.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-compsimprule">
+<span id="compsimprule-py"></span><h2>compsimprule.py<a class="headerlink" href="#module-compsimprule" title="Permalink to this headline">¶</a></h2>
+<p>Description: function compsimprule is part of the Composite Integration
+Techniques and can be thought as an upgrated version of Simpson rule
+integration technique that aproximates a defined integal evaluated in [a,b]
+with better presicion in larger intervals. It&#8217;s truncation error is of order
+h^4 and defined by a fourth order derivative. Presicion is slighly better
+than Composite midpoint rule and so is the best option when minimizing
+number of computations. Is also known to be an all-purpose quadrature algorithm.</p>
+<dl class="docutils">
+<dt>Inputs: lowerlimit - float - defines first limit of integration.</dt>
+<dd>upperlimit - float - defines last limit of integration.
+redc - integer - even integer that defines subintervals
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Outputs: integ - float - defined integral aproximation</p>
+<p>Example line: integ = compsimprule(0, 2, 1000, (lambda x: 4*x**3));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 203 - 209.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-comptraprule">
+<span id="comptraprule-py"></span><h2>comptraprule.py<a class="headerlink" href="#module-comptraprule" title="Permalink to this headline">¶</a></h2>
+<p>Description: function comptraprule is part of the Composite Integration
+Techniques and can be thought as an upgrated version of Trapezoidal rule
+integration technique that aproximates a defined integal evaluated in [a,b]
+with better presicion in larger intervals. It&#8217;s truncation error is of order
+h^2 and defined by a second order derivative. Similar to compmidtrule but
+request more operations Presicion is similar to Composite midpoint rule.
+Difference from the other methods is the need of only one integration interval
+therefore the number of subintervals can be even or odd.</p>
+<dl class="docutils">
+<dt>Inputs: lowerlimit - float - defines first limit of integration.</dt>
+<dd>upperlimit - float - defines last limit of integration.
+redc - integer - integer that reduces space grid in domain.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Outputs: integ - float - defined integral aproximation</p>
+<p>Example line: integ = comptraprule(-2, 2, 40, (lambda x: 3*x**4));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 153 - 156.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-derivpol">
+<span id="derivpol-py"></span><h2>derivpol.py<a class="headerlink" href="#module-derivpol" title="Permalink to this headline">¶</a></h2>
+<p>Description: function derivpol calculates the derivatives of interpolated
+data. A good choice to create interpolant are the cubic splines they are
+used in this program. Clamped and Natural Splines used information of
+first and second derivatives in knots, by applying algebraic manipulation
+expressions to calculate derivates are obtained.</p>
+<dl class="docutils">
+<dt>Inputs: domainlist - list object - list whose elements are x domain data.</dt>
+<dd>imagelist - list object - list whose elements are y domain data.
+evalpnt - list object - point to evaluate the derivatives.</dd>
+</dl>
+<p>Outputs: firstderiv, secndderiv - Automatic tuple of lists of derivatives.</p>
+<dl class="docutils">
+<dt>Example code: domainlist = [0 + (x*(10-0)/5)*x**2 for x in range(6)];</dt>
+<dd>imagelist = [0 + (x*(10-0)/5)*x**4 for x in range(6)];
+evalpnt = 5.4;
+fd, sd = derivpol(domainlist, imagelist, evalpnt);</dd>
+</dl>
+<p>Dependencies: cubicSpline.py - Jaan Kiusalaasr - 2013.</p>
+<p>Version: 1.1 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 191 - 195.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-FCDA">
+<span id="fcda-py"></span><h2>FCDA.py<a class="headerlink" href="#module-FCDA" title="Permalink to this headline">¶</a></h2>
+<p>Description: class centraldiff defines a set of numerical methods based on
+finite differences of central step. Capable of aproximating derivatives at
+a given point inside an interval. Central step does not evaluate derivatives
+at endpoints. Precision is highly dependant on interval size, bigger intervals
+lead to highter truncation errors. Minor error types are of h^2 order.
+Analitical errors can be calculated using fourth derivatives. Highter
+derivative orders can lead to high truncation errors, so results are likely
+to differ a lot from analytical results, especially with interpolated data.</p>
+<p>FCDA or First Centered Difference Aproximation, calculates the first
+derivative in the interval. Dependencies: testlambda, getarray.</p>
+<dl class="docutils">
+<dt>Method inputs: n - integer - Defines number of n+1 elements in list.</dt>
+<dd>lowerlimit - float - first term of interval.
+upperlimit - float - last term of interval.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Method output: diff_array - list - list of derivated values in (a,b).</p>
+<p>call sequence example: centraldiff.FCDA(4, 0, 2, (lambda x: 4*sin(x)**2));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 183 - 185.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-fixedpoint">
+<span id="fixedpoint-py"></span><h2>fixedpoint.py<a class="headerlink" href="#module-fixedpoint" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>fixedpont.py finds the root of a function using the fixed point method given the</dt>
+<dd>initial aproximations p0.</dd>
+<dt>Inputs: g - Fixed point function with the form x=g(x) obtained from f(x)=0</dt>
+<dd>p0 - Initial aproximation
+tol - Tolerance
+n - Maximum number of itarations</dd>
+</dl>
+<p>Outputs: Aproximate solution X or message of failure</p>
+<p>Quick Code: fixedpoint(&#8216;(1.0/2.0)*((10.0-x**3)**(1.0/2.0))&#8217;,1.5,3,10**-8)</p>
+<p>Version: 1.0</p>
+<p>Author: Sebastián Castaño y Felipe Lopez - SFTC - EAFIT University</p>
+</div>
+<div class="section" id="module-fournodescotes">
+<span id="fournodescotes-py"></span><h2>fournodescotes.py<a class="headerlink" href="#module-fournodescotes" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<p>Example code: integ = newtoncotesf(0, 6, lambda x: 2*x, flag = 0);</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-gaussdblint">
+<span id="gaussdblint-py"></span><h2>gaussdblint.py<a class="headerlink" href="#module-gaussdblint" title="Permalink to this headline">¶</a></h2>
+<p>Description: function gaussdblint obtains a defined double integral 
+aproximation using a nested gaussian quarature. The strategy of calculation
+is using the Legendre polynomials roots and coeficients. So that high grade 
+polynomials can be evaluated with accuracy. Adventage of this is the no
+need of equally spaced elements in domain. The function allows that the
+limits of second integral can be variable as a function of the independent
+variable or can be defined values. The second strategy of calculation is
+the continuous calculation of the second variable space grid. Since
+it can change, new grid size is created for every y value.</p>
+<dl class="docutils">
+<dt>Inputs: x_limits - list object - list with x first integral limits</dt>
+<dd>y_limits - list object - list with y second integral limits or functions
+evalpnt - list object - point to evaluate the derivatives.
+m - integer - number of subintervals in y domain.
+n - integer - number of subintervals in x domain.
+function - function object type - a double variable lambda object.
+roots - nested list - list of n, m order roots of Legendre Polynomials.
+coefflist - nested list - list of n, m coefficients of L. Polynomials.
+flag - integer - 0: defined y limits, 1: variable y limits. Default 0.</dd>
+</dl>
+<p>Outputs: J - float - double integration aproximation.</p>
+<dl class="docutils">
+<dt>Example code: x_limits = [0, 5];</dt>
+<dd>y_limits = [0, 5];
+m = 3;
+n = 2;
+function = lambda x,y: y*x*3 + y**2 - x;
+roots = [];
+coefflist = [];</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.3 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 240 - 244.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 29/12/2014.</p>
+</div>
+<div class="section" id="module-gausstpllint">
+<span id="gausstpllint-py"></span><h2>gausstpllint.py<a class="headerlink" href="#module-gausstpllint" title="Permalink to this headline">¶</a></h2>
+<p>Description: function gausstpllint obtains a defined triple integral 
+aproximation using a nested gaussian quarature. The strategy of calculation
+is using the Legendre polynomials roots and coeficients. So that high grade 
+polynomials can be evaluated with accuracy. Adventage of this is the no need
+of equally spaced elements in domain. The function allows that the limits of 
+second or third integral can be variable as a function of the independent 
+variable or can be defined values. The second strategy of calculation is 
+the continuous calculation of the second variable space grid. Since it can 
+change, new grid size is created for every y value and z value.</p>
+<dl class="docutils">
+<dt>Inputs: x_limits - list object - list with x first integral limits</dt>
+<dd>y_limits - list object - list with y second integral limits or functions
+z_limits - list object - list with z second integral limits or functions
+evalpnt - list object - point to evaluate the derivatives.
+m - integer - number of subintervals in y domain.
+n - integer - number of subintervals in x domain.
+p - integer - number of subintervals in x domain.
+function - function object type - a double variable lambda object.
+roots - nested list - list of n, m order roots of Legendre Polynomials.
+coefflist - nested list - list of n, m coefficients of L. Polynomials.
+flag - integer - 0: defined y limits, 1: variable y limits. Default 0.</dd>
+</dl>
+<p>Outputs: J - float - double integration aproximation.</p>
+<dl class="docutils">
+<dt>Example code: x_limits = [0, 5];</dt>
+<dd>y_limits = [0, 5];
+m = 3;
+n = 2;
+function = lambda x,y: y*x*3 + y**2 - x;
+roots = [];
+coefflist = [];</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.3 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 245 - 246.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 29/12/2014.</p>
+</div>
+<div class="section" id="module-hermitpoly">
+<span id="hermitpoly-py"></span><h2>hermitpoly.py<a class="headerlink" href="#module-hermitpoly" title="Permalink to this headline">¶</a></h2>
+<p>Description: function hermitpoly calculates an interpolant based on Hermit
+interpolation aided with devided difference. Using the first derivative 
+along the domain.</p>
+<dl class="docutils">
+<dt>Inputs: domainlist - list object - list whose elements are x domain data.</dt>
+<dd>imagelist - list object - list whose elements are y domain data.
+derivalist - list object - list with first derivative data.</dd>
+</dl>
+<p>Outputs: hermitcoeff - list object- Hermit interpolant coefficients.</p>
+<dl class="docutils">
+<dt>Example code: domainlist = [0 + (x*(10-0)/5)*x**2 for x in range(6)];</dt>
+<dd>imagelist = [0 + (x*(10-0)/5)*x**4 for x in range(6)];
+derivalist = [];</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.3 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 3 - Interpolation and Polynomial Approximation&#8221;. 
+Cengage Learning. 2010. pp: 133 - 141.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 27/12/2014.</p>
+</div>
+<div class="section" id="module-midpointrule">
+<span id="midpointrule-py"></span><h2>midpointrule.py<a class="headerlink" href="#module-midpointrule" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<dl class="docutils">
+<dt>Example code: lowerlimit = 0;</dt>
+<dd>upperlimit = 5;
+function = [(x*(10-0)/5)*x-x for x in range(4)];
+flag = 1;
+integ =                   numecinteg.midpointrule(
+lowerlimit, upperlimit, function, flag = 0);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-muller">
+<span id="muller-py"></span><h2>muller.py<a class="headerlink" href="#module-muller" title="Permalink to this headline">¶</a></h2>
+<p>Description: function muller is a multiple polynomial root finding algorithm.
+Due to method limitations functions with roots that are not simple
+(Multiplicity &gt; 1), Müller&#8217;s technique is limitated. For that purpose use
+high order quadrature or adaptative root finding algorithms. Since polynomial
+roots are unique, all functions of this type, even those with complex roots,
+can be easily obtained with Müller&#8217;s algorithm. This program request
+three seeds in which the roots are located, from there all roots there are
+obatained. This program will be traslated to polyroot class to make a
+selection between  Müller&#8217;s and Horner&#8217;s technique whether or not there are
+complex roots. If tolerance is not met the program raises an exception.</p>
+<dl class="docutils">
+<dt>Inputs: polynm - lambda object type - polynomial function to be evaluated.</dt>
+<dd>aprx_list - list object - list containing three seeds.
+tol - float - error tolerance in roots.
+iters - integer - Positive value providing the number of loops.</dd>
+</dl>
+<p>Outputs: p - float - Polynomial root obtained from seeds.</p>
+<p>Example code: [];</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 2 - Solutions of Equations in One Variable&#8221;. 
+Cengage Learning. 2010. pp: 97 - 98.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 24/12/2014.</p>
+</div>
+<div class="section" id="module-natspline">
+<span id="natspline-py"></span><h2>natspline.py<a class="headerlink" href="#module-natspline" title="Permalink to this headline">¶</a></h2>
+<p>Description: function clampspline generates an interpolant of third order 
+polynomial. Uses knot information of second derivatives in the first and last
+knot. The coefficients are solved using the tridiagonal linear system 
+vectorial equation AX = B by recursion in the strictly diagonally dominant 
+matrix A.</p>
+<dl class="docutils">
+<dt>Inputs: domainpnt - list object - list whose elements are x domain data.</dt>
+<dd>imagepnt - list object - list whose elements are y domain data.
+fstderpnt - list object - second derivative knot information, 2 elements.</dd>
+</dl>
+<p>Outputs: a, b, c, d - Automatic tuple of lists - interpolant coefficients.</p>
+<dl class="docutils">
+<dt>Example code: domainpnt = [(x*(10-0)/5)*x**2 for x in range(6)];</dt>
+<dd>imagepnt = [(x*(10-0)/5)*x**(2*3**0.5) for x in range(6)];
+fstderpnt = [];</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.1 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 3 - Interpolation and Polynomial Approximation&#8221;. 
+Cengage Learning. 2010. pp: 145 - 149.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 27/12/2014.</p>
+</div>
+<div class="section" id="module-nevilletable">
+<span id="nevilletable-py"></span><h2>nevilletable.py<a class="headerlink" href="#module-nevilletable" title="Permalink to this headline">¶</a></h2>
+<p>Description: function nevilletable computes a data interpolant in a recursive
+way.  While Lagrange interpolation request an a priori knowledge of the n
+order of interpolant, a way of reducing the computation needed to test
+which polynomial order fits better is done by computing the Neville&#8217;s Table.
+Interpolation nodes are created in a similar way such as Newton&#8217;s divided
+difference. As an initial aproximation, nodes equal the f(x) data and are
+slowly force to fit function behaviour by comparing the difference in first 
+x data element with the following element in a forward way. Interval is set
+dividing the first data with the following element, until is been completed
+x data reading. When tolerance is not met, new nodes must be include or if 
+so increase tolerance error.</p>
+<dl class="docutils">
+<dt>Inputs: domainpnt - list - Elements that compose data x-domain. </dt>
+<dd>imagepnt - list - Elements that compose data y-domain.
+tol - float - Criteria to check whether or not data fits with tolerance</dd>
+</dl>
+<p>Output: intrpnt - list - Polynomial coefficients of n-th grade</p>
+<dl class="docutils">
+<dt>Example code: domainpnt = [(x*(10-0)/5)+x**2 for x in range(6)];</dt>
+<dd>imagepnt = [(x*(10-0)/5)*x-x for x in range(6)];
+tol = 0.05;
+intrpnt = nevilletable(domainpnt, imagepnt, tol);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 3 - Interpolation and Polynomial Approximation&#8221;. 
+Cengage Learning. 2010. pp: 117 - 123.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-newtondivdef">
+<span id="newtondivdef-py"></span><h2>newtondivdef.py<a class="headerlink" href="#module-newtondivdef" title="Permalink to this headline">¶</a></h2>
+<p>Description: function newtondivdef computes a data interpolant in a recursive
+way. In a similar way like Neville Table, Newton Divided difference makes
+a similar approach to fit data by evaluating the function in a certain
+shifted subset in domain and compare it in the non shifted place - Forward
+y element respect actual position y element. In a certain way it might look
+like this approach is similar to the limit definition of first derivative.
+Coefficients are store in a similar 1-row way done in nevilletable. Tolerance
+criteria is placed here as well, increase the number of nodes for better 
+fitting or increace tolerance error.</p>
+<dl class="docutils">
+<dt>Inputs: domainpnt - list - Elements that compose data x-domain. </dt>
+<dd>imagepnt - list - Elements that compose data y-domain.
+tol - float - Criteria to check whether or not data fits with tolerance</dd>
+</dl>
+<p>Output: intrpnt - list - Polynomial coefficients of n-th grade</p>
+<dl class="docutils">
+<dt>Example code: domainpnt = [(x*(10-0)/5)+x**2 for x in range(6)];</dt>
+<dd>imagepnt = [(x*(10-0)/5)*x-x for x in range(6)];
+tol = 0.05;
+intrpnt = nevilletable(domainpnt, imagepnt, tol);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 3 - Interpolation and Polynomial Approximation&#8221;. 
+Cengage Learning. 2010. pp: 124 - 126.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 25/12/2014.</p>
+</div>
+<div class="section" id="module-nfirstderv">
+<span id="nfirstderv-py"></span><h2>nfirstderv.py<a class="headerlink" href="#module-nfirstderv" title="Permalink to this headline">¶</a></h2>
+<p>Description: class ncentraldiff defines a set of numerical methods based on
+finite differences with no central step - forward or backward. Capable of
+aproximating derivatives at a given point inside an interval including 
+endpoints. Precision is highly dependant on interval size, bigger intervals
+lead to highter truncation errors. Minor error types are of h^2 order. First
+non centered aproximations for derivatives are a fast way to obtain a good
+aproximation, but second non centerd aproximations provides more accurate
+results but increase computation demand. Other aproximations use high order
+Taylor series expansion.</p>
+<dl class="docutils">
+<dt>Method inputs: n - integer - Defines number of n+1 elements in list.</dt>
+<dd>lowerlimit - float - first term of interval.
+upperlimit - float - last term of interval.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Method output: diff_array - list - list of derivated values in (a,b).</p>
+<dl class="docutils">
+<dt>call sequence example: function = lambda x: 0.5*x**3+5*x*2+6*x+6.33;</dt>
+<dd>nfirstderv(4, 0, 2, function);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 185 - 186.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-nsecondderv">
+<span id="nsecondderv-py"></span><h2>nsecondderv.py<a class="headerlink" href="#module-nsecondderv" title="Permalink to this headline">¶</a></h2>
+<p>Description: class ncentraldiff defines a set of numerical methods based on
+finite differences with no central step - forward or backward. Capable of
+aproximating derivatives at a given point inside an interval including 
+endpoints. Precision is highly dependant on interval size, bigger intervals
+lead to highter truncation errors. Minor error types are of h^2 order. First
+non centered aproximations for derivatives are a fast way to obtain a good
+aproximation, but second non centerd aproximations provides more accurate
+results but increase computation demand. Other aproximations use high order
+Taylor series expansion.</p>
+<dl class="docutils">
+<dt>Method inputs: n - integer - Defines number of n+1 elements in list.</dt>
+<dd>lowerlimit - float - first term of interval.
+upperlimit - float - last term of interval.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Method output: diff_array - list - list of derivated values in (a,b).</p>
+<dl class="docutils">
+<dt>call sequence example: function = lambda x: 0.5*x**3+5*x*2+6*x+6.33;</dt>
+<dd>nsecondderv(4, 0, 2, function);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 185 - 186.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-onenodeopn">
+<span id="onenodeopn-py"></span><h2>onenodeopn.py<a class="headerlink" href="#module-onenodeopn" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<dl class="docutils">
+<dt>Example code: lowerlimit = 0;</dt>
+<dd>upperlimit = 5;
+function = [(x*(10-0)/5)*x-x for x in range(4)];
+flag = 1;
+integ =                   numecinteg.onenodeopn(lowerlimit, upperlimit, function, flag = 0);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-polyroot">
+<span id="polyroot-py"></span><h2>polyroot.py<a class="headerlink" href="#module-polyroot" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a small class type python program used as 
+a prototipe algorithm. It&#8217;s actual function is to represent a polynomial from
+a set of coefficients. The second feature is finding it&#8217;s roots by applying
+Horner&#8217;s algorithm.</p>
+<p>Method Inputs: None - Input built-in function takes data from user</p>
+<dl class="docutils">
+<dt>Method Outputs: Polinomial visualization</dt>
+<dd>py,pz,b0 - automatic tuple - Provides information of roots.</dd>
+</dl>
+<p>Example code: [];</p>
+<p>Dependencies: None.</p>
+<p>Version: 0.8 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 2 - Solutions of Equations in One Variable&#8221;. 
+Cengage Learning. 2010. pp: 92 - 96.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 24/12/2014.</p>
+</div>
+<div class="section" id="module-QCDA">
+<span id="qcda-py"></span><h2>QCDA.py<a class="headerlink" href="#module-QCDA" title="Permalink to this headline">¶</a></h2>
+<p>Description: class centraldiff defines a set of numerical methods based on
+finite differences of central step. Capable of aproximating derivatives at
+a given point inside an interval. Central step does not evaluate derivatives
+at endpoints. Precision is highly dependant on interval size, bigger intervals
+lead to highter truncation errors. Minor error types are of h^2 order.
+Analitical errors can be calculated using fourth derivatives. Highter
+derivative orders can lead to high truncation errors, so results are likely
+to differ a lot from analytical results, especially with interpolated data.</p>
+<p>QCDA or Fourth Centered Difference Aproximation, calculates the fourth
+derivative in the interval. Dependencies: testlambda, getarray.</p>
+<dl class="docutils">
+<dt>Method inputs: n - integer - Defines number of n+1 elements in list.</dt>
+<dd>lowerlimit - float - first term of interval.
+upperlimit - float - last term of interval.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Method output: diff_array - list - list of derivated values in (a,b).</p>
+<p>call sequence example: centraldiff.FCDA(4, 0, 2, (lambda x: 4*sin(x)**2));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 183 - 185.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-regulafalsi">
+<span id="regulafalsi-py"></span><h2>regulafalsi.py<a class="headerlink" href="#module-regulafalsi" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>regulafalsi.py finds the root of a function continuous in an interval [p0,p1]</dt>
+<dd>where f(p0) and f(p1) have opposite signs</dd>
+<dt>Inputs: f- Function in terms of x</dt>
+<dd>p0,p1 - Interval
+tol - Tolerance
+n - Maximum number of itarations</dd>
+</dl>
+<p>Outputs: Aproximate solution X or message of failure</p>
+<p>Quick Code: fixedpoint(&#8216;(1.0/2.0)*((10.0-x**3)**(1.0/2.0))&#8217;,1.5,3,10**-8)</p>
+<p>Version: 1.0</p>
+<p>Author: Sebastián Castaño y Felipe Lopez - SFTC - EAFIT University</p>
+</div>
+<div class="section" id="module-richarexpol">
+<span id="richarexpol-py"></span><h2>richarexpol.py<a class="headerlink" href="#module-richarexpol" title="Permalink to this headline">¶</a></h2>
+<p>Description: function richarexpol is a small method that applies Richardson
+Extrapolation. This technique is one of the keystones in Advance Numerical
+Methods. Extrapolation allows to increase the presicion of a numerical 
+result whitout increasing data nodes, whenever space grid size, h, is involve.
+For this program, extrapolation receives 2 approximations of a value dependent
+on h, and by setting the correct order p from analytical truncation error
+high accurate results can be obtained.</p>
+<dl class="docutils">
+<dt>Inputs: P - integer - Non negative integer setting the order of correction term</dt>
+<dd>firstaprx - float - first approximation of an h dependent value;
+secondprx - float - second approximation of an h dependent value;</dd>
+</dl>
+<p>Method Outputs: G - float - High accurate result</p>
+<p>Example code: [];</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.0 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 188 - 189.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-romberginteg">
+<span id="romberginteg-py"></span><h2>romberginteg.py<a class="headerlink" href="#module-romberginteg" title="Permalink to this headline">¶</a></h2>
+<p>Description: function romberginteg computes an approximation of a defined
+integral in [a,b]. Romberg Integration uses other minor techniques to produce
+accurate results. First aproximations are obtain from one of the Newton-Cotes
+Formulas and then results are improve with extrapolation techniques. Then
+the process is done all over again on the subinterval section. Every loop
+grid size is half for better presicion improvement.</p>
+<dl class="docutils">
+<dt>Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd>upperlimit - float - Last element in integration interval
+subinterv - positive integer - Number of subintervals
+function - lambda object type - evaluates f(x) at x</dd>
+</dl>
+<p>Outputs: R - list object - Romberg table - integration aproximation.</p>
+<p>Example code: R = romberginteg(-3.15, 6.2, 10, (lambda x: 2*x**3 + 4.3));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.5 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 213 - 218.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 19/02/2015.</p>
+</div>
+<div class="section" id="module-SCDA">
+<span id="scda-py"></span><h2>SCDA.py<a class="headerlink" href="#module-SCDA" title="Permalink to this headline">¶</a></h2>
+<p>Description: class centraldiff defines a set of numerical methods based on
+finite differences of central step. Capable of aproximating derivatives at
+a given point inside an interval. Central step does not evaluate derivatives
+at endpoints. Precision is highly dependant on interval size, bigger intervals
+lead to highter truncation errors. Minor error types are of h^2 order.
+Analitical errors can be calculated using fourth derivatives. Highter
+derivative orders can lead to high truncation errors, so results are likely
+to differ a lot from analytical results, especially with interpolated data.</p>
+<p>SCDA or Second Centered Difference Aproximation, calculates the second
+derivative in the interval. Dependencies: testlambda, getarray.</p>
+<dl class="docutils">
+<dt>Method inputs: n - integer - Defines number of n+1 elements in list.</dt>
+<dd>lowerlimit - float - first term of interval.
+upperlimit - float - last term of interval.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Method output: diff_array - list - list of derivated values in (a,b).</p>
+<p>call sequence example: centraldiff.FCDA(4, 0, 2, (lambda x: 4*sin(x)**2));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 183 - 185.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-secant">
+<span id="secant-py"></span><h2>secant.py<a class="headerlink" href="#module-secant" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>secant.py finds the root of a function using the Secant method given the</dt>
+<dd>initial aproximations p1 and p0 so that the root is a number between them</dd>
+<dt>Inputs: f - Function in terms of &#8216;x&#8217;</dt>
+<dd>p0,p1 - Initial aproximations
+tol - Tolerance
+n - maximum number of iterations</dd>
+</dl>
+<p>Outputs: Aproximate solution X or message of failure</p>
+<p>Quick Code: secant(&#8216;math.cos(x)-x&#8217;,0.5,math.pi/4,5*10**-8,20)</p>
+<p>Version: 1.0</p>
+<p>Author: Sebastián Castaño - SFTC - EAFIT University</p>
+</div>
+<div class="section" id="module-simpdblintg">
+<span id="simpdblintg-py"></span><h2>simpdblintg.py<a class="headerlink" href="#module-simpdblintg" title="Permalink to this headline">¶</a></h2>
+<p>Description: function simpdblintg obtains a defined double integral 
+aproximation using Simpson Integration Rule by reducing intervals into
+subintervals. Similar to Double Legendre-Gauss Quadrature, calculations are
+done from inside to outsie, using outside domain to calculate inside 
+integration domain. The sum process in this method takes the results in 
+three stages, the endpoints of the interval, and subinterval results, this
+last one is devided on even and odd intervals. The heavy process is done
+within the subintervals by continuously modifying space grid size and by
+applying Simpson Rule. There is no need for use roots or coeficients from
+Legendre Polynomials for approximation, making it a bit faster than the
+Gauss-Legendre Quadrature, yet presicion might decrease if compare with it.</p>
+<dl class="docutils">
+<dt>Inputs: x_limits - list object - list with x first integral limits</dt>
+<dd>y_limits - list object - list with y second integral limits or functions
+evalpnt - list object - point to evaluate the derivatives.
+m - integer - number of subintervals in y domain.
+n - integer - number of subintervals in x domain.
+function - function object type - a double variable lambda object.
+flag - integer - 0: defined y limits, 1: variable y limits. Default 0.</dd>
+</dl>
+<p>Outputs: J - float - double integration aproximation.</p>
+<dl class="docutils">
+<dt>Example code: x_limits = [0, 5];</dt>
+<dd>y_limits = [0, 5];
+m = 3;
+n = 2;
+function = lambda x,y: y*x*3 + y**2 - x;
+roots = [];
+coefflist = [];</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.3 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definition and structure were taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 240 - 244.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 29/12/2014.</p>
+</div>
+<div class="section" id="module-simprule">
+<span id="simprule-py"></span><h2>simprule.py<a class="headerlink" href="#module-simprule" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<dl class="docutils">
+<dt>Example code: lowerlimit = 0;</dt>
+<dd>upperlimit = 5;
+function = [(x*(10-0)/5)*x-x for x in range(4)];
+flag = 1;
+integ =                   numecinteg.simprule(lowerlimit, upperlimit, function, flag = 0);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-snfirstderv">
+<span id="snfirstderv-py"></span><h2>snfirstderv.py<a class="headerlink" href="#module-snfirstderv" title="Permalink to this headline">¶</a></h2>
+<p>Description: class ncentraldiff defines a set of numerical methods based on
+finite differences with no central step - forward or backward. Capable of
+aproximating derivatives at a given point inside an interval including 
+endpoints. Precision is highly dependant on interval size, bigger intervals
+lead to highter truncation errors. Minor error types are of h^2 order. First
+non centered aproximations for derivatives are a fast way to obtain a good
+aproximation, but second non centerd aproximations provides more accurate
+results but increase computation demand. Other aproximations use high order
+Taylor series expansion.</p>
+<dl class="docutils">
+<dt>Method inputs: n - integer - Defines number of n+1 elements in list.</dt>
+<dd>lowerlimit - float - first term of interval.
+upperlimit - float - last term of interval.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Method output: diff_array - list - list of derivated values in (a,b).</p>
+<dl class="docutils">
+<dt>call sequence example: function = lambda x: 0.5*x**3+5*x*2+6*x+6.33;</dt>
+<dd>ncentraldiff.snfirstderv(4, 0, 2, function);</dd>
+</dl>
+<p>call sequence example: ncentraldiff.nfirstderv(4, 0, 2, (lambda x: 4*sin(x)**2));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 185 - 186.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-TCDA">
+<span id="tcda-py"></span><h2>TCDA.py<a class="headerlink" href="#module-TCDA" title="Permalink to this headline">¶</a></h2>
+<p>Description: class centraldiff defines a set of numerical methods based on
+finite differences of central step. Capable of aproximating derivatives at
+a given point inside an interval. Central step does not evaluate derivatives
+at endpoints. Precision is highly dependant on interval size, bigger intervals
+lead to highter truncation errors. Minor error types are of h^2 order.
+Analitical errors can be calculated using fourth derivatives. Highter
+derivative orders can lead to high truncation errors, so results are likely
+to differ a lot from analytical results, especially with interpolated data.</p>
+<p>TCDA or Third Centered Difference Aproximation, calculates the third
+derivative in the interval. Dependencies: testlambda, getarray.</p>
+<dl class="docutils">
+<dt>Method inputs: n - integer - Defines number of n+1 elements in list.</dt>
+<dd>lowerlimit - float - first term of interval.
+upperlimit - float - last term of interval.
+function - function type object - evaluates f(x) at x.</dd>
+</dl>
+<p>Method output: diff_array - list - list of derivated values in (a,b).</p>
+<p>call sequence example: centraldiff.FCDA(4, 0, 2, (lambda x: 4*sin(x)**2));</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Jaan Kiusalaasr. &#8220;Numerical Methods in Engineering With Python 3&#8221;.
+3th ed. &#8220;Chapter 5 - Numerical Differentiation&#8221;. 
+Cambridge University Press. 2013. PP. 183 - 185.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-tesimprule">
+<span id="tesimprule-py"></span><h2>tesimprule.py<a class="headerlink" href="#module-tesimprule" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<p>Example code: integ = tesimprule(0, 2, lambda x: x, 3, flag = 0);</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-thrnodeopn">
+<span id="thrnodeopn-py"></span><h2>thrnodeopn.py<a class="headerlink" href="#module-thrnodeopn" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<dl class="docutils">
+<dt>Example code: lowerlimit = 0;</dt>
+<dd>upperlimit = 5;
+function = [(x*(10-0)/5)*x-x for x in range(4)];
+flag = 1;
+integ =                   numecinteg.onenodeopn(lowerlimit, upperlimit, function, flag = 0);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-trapzrule">
+<span id="trapzrule-py"></span><h2>trapzrule.py<a class="headerlink" href="#module-trapzrule" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<p>Example code: integ = trapzrule(0, 2, lambda x: 1.5*x, flag = 0);</p>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+<div class="section" id="module-twonodeopn">
+<span id="twonodeopn-py"></span><h2>twonodeopn.py<a class="headerlink" href="#module-twonodeopn" title="Permalink to this headline">¶</a></h2>
+<p>Description: class numecinteg is a set of numerical techniques applied to
+Numerical Integration, based on the elemental Closed Newton-Cotes and
+Open Newton-Cotes Formulas. This set holds the fundamental technique for
+highter ones like Composite Numerical Integration and Adapatative Quadrature.
+So for that extent, small integration intervals are required to achive certain
+presicion. The methods described here works in a similar way by taking an
+integration interval and reduced it in equally spaced elements or more 
+subintervals and sum each of them. The success of this techniques is based
+on parameter h, which is the space grid size. Lower spacing will grand better
+presicion, also truncation and round-off error will increase by minor changes
+in h, every technique differs on how it&#8217;s analitical error increases.</p>
+<p>The program set allows to input interpolated data or an analytical expression
+as a lambda object. More restriction is applied to interpolated data, since
+not all orders can be integrated properly with every technique. For high 
+interval integration, comptechrule.py or adapquad.py set is recommended.</p>
+<dl class="docutils">
+<dt>Method Inputs: lowerlimit - float - First element in integration interval</dt>
+<dd><p class="first">upperlimit - float - Last element in integration interval
+function - lambda object type - evaluates f(x) at x &#8211; or</p>
+<blockquote>
+<div><ul class="simple">
+<li>list - coefficients of interpolated data</li>
+</ul>
+</div></blockquote>
+<p class="last">flag - integer - optional - defines 0: lambda type 1: list type</p>
+</dd>
+</dl>
+<p>Method Output: integ - float - Integration aproximation</p>
+<dl class="docutils">
+<dt>Example code: lowerlimit = 0;</dt>
+<dd>upperlimit = 5;
+function = [(x*(10-0)/5)*x-x for x in range(4)];
+flag = 1;
+integ =                   numecinteg.onenodeopn(lowerlimit, upperlimit, function, flag = 0);</dd>
+</dl>
+<p>Dependencies: None.</p>
+<p>Version: 1.2 for Python 3.4</p>
+<dl class="docutils">
+<dt>Definitions are taken from:</dt>
+<dd>Richard L. Burden, J. Douglas Faires. &#8220;Numerical Analysis&#8221; 9th ed.
+&#8220;Chapter 4 - Numerical Differentiation and Integration&#8221;. 
+Cengage Learning. 2010. pp: 193 - 201.</dd>
+</dl>
+<p>Author: J.J. Cadavid - SFTC - EAFIT University.
+Contact: <a class="reference external" href="mailto:jcadav22&#37;&#52;&#48;eafit&#46;edu&#46;co">jcadav22<span>&#64;</span>eafit<span>&#46;</span>edu<span>&#46;</span>co</a></p>
+<p>Date: 28/12/2014.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentación e Índice de los métodos - English Ver.</a><ul>
+<li><a class="reference internal" href="#module-adapquad">adapquad.py</a></li>
+<li><a class="reference internal" href="#module-beziercurve">beziercurve.py</a></li>
+<li><a class="reference internal" href="#module-bisection">bisection.py</a></li>
+<li><a class="reference internal" href="#module-clampspline">clampspline.py</a></li>
+<li><a class="reference internal" href="#module-compmidtrule">compmidtrule.py</a></li>
+<li><a class="reference internal" href="#module-compsimprule">compsimprule.py</a></li>
+<li><a class="reference internal" href="#module-comptraprule">comptraprule.py</a></li>
+<li><a class="reference internal" href="#module-derivpol">derivpol.py</a></li>
+<li><a class="reference internal" href="#module-FCDA">FCDA.py</a></li>
+<li><a class="reference internal" href="#module-fixedpoint">fixedpoint.py</a></li>
+<li><a class="reference internal" href="#module-fournodescotes">fournodescotes.py</a></li>
+<li><a class="reference internal" href="#module-gaussdblint">gaussdblint.py</a></li>
+<li><a class="reference internal" href="#module-gausstpllint">gausstpllint.py</a></li>
+<li><a class="reference internal" href="#module-hermitpoly">hermitpoly.py</a></li>
+<li><a class="reference internal" href="#module-midpointrule">midpointrule.py</a></li>
+<li><a class="reference internal" href="#module-muller">muller.py</a></li>
+<li><a class="reference internal" href="#module-natspline">natspline.py</a></li>
+<li><a class="reference internal" href="#module-nevilletable">nevilletable.py</a></li>
+<li><a class="reference internal" href="#module-newtondivdef">newtondivdef.py</a></li>
+<li><a class="reference internal" href="#module-nfirstderv">nfirstderv.py</a></li>
+<li><a class="reference internal" href="#module-nsecondderv">nsecondderv.py</a></li>
+<li><a class="reference internal" href="#module-onenodeopn">onenodeopn.py</a></li>
+<li><a class="reference internal" href="#module-polyroot">polyroot.py</a></li>
+<li><a class="reference internal" href="#module-QCDA">QCDA.py</a></li>
+<li><a class="reference internal" href="#module-regulafalsi">regulafalsi.py</a></li>
+<li><a class="reference internal" href="#module-richarexpol">richarexpol.py</a></li>
+<li><a class="reference internal" href="#module-romberginteg">romberginteg.py</a></li>
+<li><a class="reference internal" href="#module-SCDA">SCDA.py</a></li>
+<li><a class="reference internal" href="#module-secant">secant.py</a></li>
+<li><a class="reference internal" href="#module-simpdblintg">simpdblintg.py</a></li>
+<li><a class="reference internal" href="#module-simprule">simprule.py</a></li>
+<li><a class="reference internal" href="#module-snfirstderv">snfirstderv.py</a></li>
+<li><a class="reference internal" href="#module-TCDA">TCDA.py</a></li>
+<li><a class="reference internal" href="#module-tesimprule">tesimprule.py</a></li>
+<li><a class="reference internal" href="#module-thrnodeopn">thrnodeopn.py</a></li>
+<li><a class="reference internal" href="#module-trapzrule">trapzrule.py</a></li>
+<li><a class="reference internal" href="#module-twonodeopn">twonodeopn.py</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter05.html"
+                        title="previous chapter">Capitulo 05: Extrapoladores</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/code.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="chapter05.html" title="Capitulo 05: Extrapoladores"
+             >previous</a> |</li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Semillero de Fisica Teorica y Computacional.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

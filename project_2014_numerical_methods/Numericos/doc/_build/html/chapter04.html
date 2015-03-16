@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Capitulo 04: Integradores &mdash; Interactive-Numeric 1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Interactive-Numeric 1.2 documentation" href="index.html" />
+    <link rel="next" title="Capitulo 05: Extrapoladores" href="chapter05.html" />
+    <link rel="prev" title="Capitulo 03: Diferenciadores" href="chapter03.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter05.html" title="Capitulo 05: Extrapoladores"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="chapter03.html" title="Capitulo 03: Diferenciadores"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="capitulo-04-integradores">
+<h1>Capitulo 04: Integradores<a class="headerlink" href="#capitulo-04-integradores" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="descripcion-del-metodo">
+<h2>Descripción del método:<a class="headerlink" href="#descripcion-del-metodo" title="Permalink to this headline">¶</a></h2>
+<p>En este módulo se encuentran los métodos integradores que aproximan la funcion f(x) que se va a integrar por medio de polinomios interpolantes de diferentes grados, donde los métodos varían según el número de puntos o intervalo que se utilice para dicha aproximación permitiendo calcular integrales definidas.
+Existen varios métodos que permiten realizar el proceso de hallar una integral defina y se dividen en este proyecto en las siguientes categorías:</p>
+<blockquote>
+<div><table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-C<var>losedNewtonCotes</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id1"><span class="problematic" id="id2">*</span></a>Fournodescotes
+<a href="#id3"><span class="problematic" id="id4">*</span></a>simprule
+<a href="#id5"><span class="problematic" id="id6">*</span></a>tesimprule
+<a href="#id7"><span class="problematic" id="id8">*</span></a>trapzrule</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-C<var>ompositeRules</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id9"><span class="problematic" id="id10">*</span></a>Compmidtrule
+<a href="#id11"><span class="problematic" id="id12">*</span></a>compsimrule
+<a href="#id13"><span class="problematic" id="id14">*</span></a>comptraprule</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-D<var>oubleIntegral</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id15"><span class="problematic" id="id16">*</span></a>Gaussblint
+<a href="#id17"><span class="problematic" id="id18">*</span></a>Simpbdlintg</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-O<var>penNewtonCotes</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id19"><span class="problematic" id="id20">*</span></a>Midpointrule
+<a href="#id21"><span class="problematic" id="id22">*</span></a>Onenodeopn
+<a href="#id23"><span class="problematic" id="id24">*</span></a>Thrnodeopn
+<a href="#id25"><span class="problematic" id="id26">*</span></a>twonodeopn</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-T<var>ripleintegral</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><a href="#id27"><span class="problematic" id="id28">*</span></a>Gausstpllint</td></tr>
+</tbody>
+</table>
+<p>-Adapquad
+-Natspline
+-Romberginted</p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Capitulo 04: Integradores</a><ul>
+<li><a class="reference internal" href="#descripcion-del-metodo">Descripción del método:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter03.html"
+                        title="previous chapter">Capitulo 03: Diferenciadores</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="chapter05.html"
+                        title="next chapter">Capitulo 05: Extrapoladores</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/chapter04.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter05.html" title="Capitulo 05: Extrapoladores"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="chapter03.html" title="Capitulo 03: Diferenciadores"
+             >previous</a> |</li>
+        <li><a href="index.html">Interactive-Numeric 1.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Semillero de Fisica Teorica y Computacional.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
