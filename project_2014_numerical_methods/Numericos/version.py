@@ -1,9 +1,2 @@
-
-short_version = '1.9.2'
-version = '1.9.2'
-full_version = '1.9.2'
-git_revision = '762c6f15bf57506e21239a4dd68192e4da6014f7'
-release = False
-
-if not release:
-    version = 'beta_version'
+version = '1.5 -- beta_version'
+print (version)

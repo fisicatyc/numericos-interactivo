@@ -3,12 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Interactive-Numeric's documentation!
-===============================================
+Bienvenido a la documentación de Numericos Interactivos
+=======================================================
 
-Ésta es la documentación oficial del proyecto cofinanciado por Colciencias desarrollado 
+étsta es la documentación oficial del proyecto cofinanciado por Colciencias desarrollado 
 por el Semillero de Física Teórica y Computacional https://sites.google.com/site/fisicatyc/home
-El proyecto "Numéricos - Interactivos" es una implementación en Python 3.4 de los métodos numéricos
+El proyecto "Numétricos - Interactivos" es una implementación en Python 3.4 de los méttodos numétricos
 elementales de Búsqueda de Raíces, Interpolación, Diferenciación e Integración.
 
 El repositorio vigente del proyecto puede encontrarse en GitHub en el vínculo:
@@ -19,15 +19,18 @@ Requerimientos:
 
 	El proyecto fue desarrollado utilizando las funciones Built-In de Python 3.4 por lo que no es
 	necesario otro tipo paquetes para su funcionamiento.
-	
 
-Contents:
+Contenidos:
 
 .. toctree::
    :maxdepth: 2
-   project
+   
+   chapter01
+   chapter02
+   chapter03
+   chapter04
+   chapter05
    code
-
 
 
 Indices and tables
