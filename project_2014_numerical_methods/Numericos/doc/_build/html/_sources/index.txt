@@ -1,0 +1,37 @@
+﻿.. Interactive-Numeric documentation master file, created by
+   sphinx-quickstart on Sun Mar 15 13:43:16 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Interactive-Numeric's documentation!
+===============================================
+
+Ésta es la documentación oficial del proyecto cofinanciado por Colciencias desarrollado 
+por el Semillero de Física Teórica y Computacional https://sites.google.com/site/fisicatyc/home
+El proyecto "Numéricos - Interactivos" es una implementación en Python 3.4 de los métodos numéricos
+elementales de Búsqueda de Raíces, Interpolación, Diferenciación e Integración.
+
+El repositorio vigente del proyecto puede encontrarse en GitHub en el vínculo:
+
+https://github.com/fisicatyc/numericos-interactivo
+
+Requerimientos:
+
+	El proyecto fue desarrollado utilizando las funciones Built-In de Python 3.4 por lo que no es
+	necesario otro tipo paquetes para su funcionamiento.
+	
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
