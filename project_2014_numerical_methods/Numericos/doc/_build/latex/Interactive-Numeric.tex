@@ -186,7 +186,7 @@ El proyecto fue desarrollado utilizando las funciones Built-In de Python 3.4 por
 necesario otro tipo paquetes para su funcionamiento.
 \end{quote}
 
-Contenidos:
+El objetivo principal de este proyecto es que el usuario por medio de las herramientas facilitadas en este, encuentre un camino más interactivo para el estudio del análisis numérico. Se ***************************
 
 \chapter[Búsqueda de Raíces]{Métodos de Búsqueda de Raíces}
 
@@ -397,7 +397,161 @@ construir modelos matemáticos para la descripción del fenómeno y permitan rea
 
 \section{Interpolación de Newton}
 
-Se puede formular de manera general como
+Se puede formular de manera general como:
+
+\begin{equation}
+	f_n(x) = \sum\limits_{i=0}^{n}f(x_i)\prod\limits_{j=0}^{i-1}(x-x_j)
+\end{equation}
+
+Algoritmicamente es posible plantear una alternativa mediante la utilización de
+diferencias divididas (lo cual no se discutirá).
+
+\section{Interpolación de Lagrange}
+
+El método de interpolación de Lagrange es una reformulación del método de
+interpolacién de Newton (ec.3.1), que evita el cálculo de las diferencias divididas.
+El polinomio resultante se puede expresar como:
+
+\begin{equation}
+	f_n(x)=\sum\limits_{i=0}^{n}L_i(x)f(x_i)
+\end{equation}
+
+donde
+
+\begin{equation}
+	L_i(x)=\prod\limits_{j=0j \neq,i}^{n}\frac{x-x_j}{x_i-x_j}
+\end{equation}
+
+La formulación de Lagrange (ec.3.2) es posible comprenderse si se observa que el
+termino Li(x) a partir de ec.3.3 es 1 si x = xi y 0 para los demás puntos.
+
+\section{Splines}
+
+La utilización de la interpolación polinomial, al usar polinomios de grados
+grandes pueden propagar errores de redondeo significativos y conducir a resultados
+erróneos, además de que la existencia de puntos alejados entre si trae como
+consecuencia curvas no muy bien comportadas.
+En general, es de esperar que el comportamiento de un sistema no posee cambios
+bruscos y se refleje por ende en curvas suaves. Para ello, se propone una alternativa
+de interpolación, los splines.
+Los splines o trazadores, utilizan polinomios de grados menores para interpolar
+subconjuntos de puntos. Entre cada par de puntos se usa un polinomio interpolante,
+y cuyas condiciones para hallar los coeficientes se establecen a partir de
+condiciones de continuidad de la función y de sus primeras derivadas.
+Es usual, el caso de los splines cúbicos, los cuales crean curvas suaves entre los
+puntos a interpolar con oscilaciones mínimas. Los splines cúbicos, son la forma
+resultante de poner una banda elástica a rodear los puntos (alfileres). Esto puede
+dar idea de un principio de mínima energía, y por ende de lo apropiados que
+pueden ser en la descripción de fenómenos naturales.
+
+\section{Splines de primer grado}
+
+Corresponde al caso mas sencillo de unión entre dos puntos, mediante el trazado de una linea recta.
+
+\begin{equation}
+	f(x)=
+	\begin{cases}
+	f(x_0)+m_o(x-x_0)				 & x_0\preceq,x\preceq,x_1 \\
+	f(x_1)+m_1(x-x_1)				 & x_1\preceq,x\preceq,x_2 \\ 
+	.&. \\
+	.&. \\
+	.&. \\
+	f(x_{n-1})+m_{n-1}(x-x_{n-1})				 & x_{n-1}\preceq,x\preceq,x_n \\
+	\end{cases}
+\end{equation}
+
+Las pendientes indicadas en ec.3.4 corresponden a 
+
+\begin{equation}
+	m_i=\frac{f(x_{i+1})-f(x_i)}{x_{i+1}-x_i}
+\end{equation}
+
+\section{Splines de segundo grado}
+
+Los trazadores de grado superior son usuales para asegurar la continuidad de
+las primeras derivadas de la función. Si se requieren m derivadas continuas, se
+requiere a lo sumo de usar trazadores de grado $m + 1$.
+Un trazador cuadrático asegura que la primera derivada de la función sea también
+continua.
+Para hallar los coeficientes se requiere de imponer condiciones que creen el conjunto
+de ecuaciones iguales al número de coeficientes, de forma que el sistema sea
+soluble.
+
+\textbf{Condiciones}
+
+La forma general del trazador para $n + 1$ datos $(i = 0..n)$ es $f_i(x) = a_ix^
+2 +
+b_ix+c_i$
+. Estos polinomios aplican sobre los $n$ intervalos existentes entre los puntos,
+y generan $3n$ coeficientes desconocidos que requieren de las siguientes condicione
+para formar las $3n$ ecuaciones para solucionar el sistema de ecuaciones.
+
+\begin{enumerate}
+	\item Los valores de la función de polinomios adyacentes deben ser iguales en los
+	nodos interiores. Esto es que para i = $2..n$ se da
+	
+	\begin{equation}
+		f(x_{i-1})=a_{i-1}x^2_{i-1}+b_{i-1}x_{i-1}+c_{i-1} 
+	\end{equation}
+	\begin{equation}
+		f(x_{i-1})=a_ix^2_{i-1}+b_ix_i+c_i
+	\end{equation}
+	
+	Observese que por cada nodo interior se generar 2 ecuaciones, lo cual produce en total $2(n-2)$ ecuaciones.
+	
+	\item La primera y última función deben pasar por los puntos extremos.
+	
+	\begin{equation}
+	f(x_0)=a_ix^2_0+b_1x_0+c_1 
+	\end{equation}
+	\begin{equation}
+	f(x_n)=a_nx^2_n+b_nx_n+c_n
+	\end{equation}
+	
+	Esta condición aporta 2 ecuaciones más.
+	
+	\item Las primeras derivadas en los nodos interiores deben ser iguales. La primera derivada en forma general se expresa como $f_i'(x)=2a_ix_{i-1}+b_i$, y por lo tanto la condición se puede expresar como
+	
+	\begin{equation}
+		2a_{i-1}x_{i-1}+b_{i-1}=2a_ix_{i-1}+b_i
+	\end{equation}
+	
+	Para $i=2..n, aportando n-1 ecuaciones.$
+	
+	\item La ecuación adicional se obtiene mediante una condición arbitrara, podemos suponer que en el primer punto la segunda derivada es cero, de donde se obtiene como ecuación, $a_1=0$. 
+	
+\end{enumerate}
+
+El siguiente paso, es resolver el sistema de ecuaciones para obtener los coeficientes.
+
+\section{Splines de tercer grado}
+
+Para los trazadores cúbicos tenemos como expresión general $f_i(x) = a_ix^
+3 +
+b^
+2_
+i + c_ix + d_i$
+. Igual que los casos anteriores, para $n + 1$ datos, existen $n$ intervalos
+en los cuales se trazara un polinomio interpolante, esta vez, de grado $3$. Para los
+trazadores cúbicos, se tienen $4n$ coeficientes desconocidos, y por ende se requieren
+condiciones para formar el sistema de $4n$ ecuaciones necesarias para determinar
+los coeficientes.
+
+\textbf{Condiciones}
+
+\begin{enumerate}
+	\item Los valores de la función deben ser iguales en los nodos interiores. Aporta $2n-2$ ecuaciones.
+	\item La primera y última función deben pasar a través de los puntos extremos. Aporta 2 ecuaciones.
+	\item Las primeras derivadas en los nodos interiores deben ser iguales. Aporta $n-1$ecuaciones.
+	\item Las segundas derivadas en los nodos interiores deben ser iguales. Aporta $n-1$ ecuaciones.
+	\item Las segundas derivadas en los nodos extremos son cero. Aporta 2 ecuaciones.
+\end{enumerate}
+
+La condición 5 representa que la función se vuelve una linea recta en los extremos,
+y esta condición particular hace que el trazador reciba la denominación de trazador
+”natural”. Para los trazadores cúbicos es posible obtener una formulación que reduce el
+sistema de ecuaciones de $4n$ a $n-1$, representando una considerable reducción
+del costo computacional.
 
 \section{Descripción del método:}
 \label{chapter02:descripcion-del-metodo}
@@ -425,7 +579,7 @@ Se encuentran los siguientes métodos interpoladores:
 \section{Descripción del método:}
 \label{chapter03:descripcion-del-metodo}
 En este módulo se aplican los métodos diferenciadores o también conocidos como diferencias finitas. Se van a categorizar como diferencias centradas y no centradas, donde la primera define un conjunto de métodos numéricos en diferencias finitas con paso centrado. Y en los métodos no centrados se define un conjunto de métodos numéricos basándose en diferencias finitas SIN paso centrado.
-Estas técnicas se emplean muy a menudo en análisis numérico, especialmente en ecuaciones numéricas ordinarias, ecuaciones en diferencias y ecuaciones
+Estas técnicas se emplean muy a menudo en análisis numérico, especialmente en ecuaciones numéricas ordinarias, ecuaciones en diferencias y ecuaciones.
 En derivadas parciales. Las aplicaciones habituales suelen ser en los campos de la computación, áreas de la ingeniería térmica o en la Mecánica de fluidos.
 
 Se encuentran los siguientes métodos diferenciadores centrados:
