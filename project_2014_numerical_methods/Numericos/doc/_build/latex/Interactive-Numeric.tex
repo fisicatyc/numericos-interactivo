@@ -576,13 +576,90 @@ Se encuentran los siguientes métodos interpoladores:
 \chapter{Capitulo 03: Diferenciadores}
 \label{chapter03::doc}\label{chapter03:capitulo-03-diferenciadores}
 
-\section{Descripción del método:}
-\label{chapter03:descripcion-del-metodo}
+\section{Diferenciación numérica}
+\label{chapter03:Diferenciación numérica}
+
 En este módulo se aplican los métodos diferenciadores o también conocidos como diferencias finitas. Se van a categorizar como diferencias centradas y no centradas, donde la primera define un conjunto de métodos numéricos en diferencias finitas con paso centrado. Y en los métodos no centrados se define un conjunto de métodos numéricos basándose en diferencias finitas SIN paso centrado.
 Estas técnicas se emplean muy a menudo en análisis numérico, especialmente en ecuaciones numéricas ordinarias, ecuaciones en diferencias y ecuaciones.
 En derivadas parciales. Las aplicaciones habituales suelen ser en los campos de la computación, áreas de la ingeniería térmica o en la Mecánica de fluidos.
 
-Se encuentran los siguientes métodos diferenciadores centrados:
+La diferenciación numérica retoma dos elementos principales, los cambios absolutos entre dos puntos de una función real y la expansión en series de Taylor. La diferencia absoluta entre dos puntos de una función real, determina el comportamiento de la pendiente de manera local.  En el caso de una recta, la pendiente es determinada como el cociente entre las variaciones de la imagen de la función y su dominio, de la forma:
+
+\begin{equation}
+m = \frac{y_{1} - y_{0}}{x_{1} - x_{0}} = \frac{\Delta\,Y}{\Delta\,X}
+\end{equation}
+
+El comportamiento de la recta es constante respecto a los cambios en todo el dominio. En el caso de una función que posea segunda derivada, implicará la existencia de concavidades y puntos de inflexión. En éste caso el cambio a lo largo de l dominio de la función no es constante, y varía punto a punto. En ésta consideración no se considera una recta tangente a un punto, sino una recta secante entre dos puntos. Considere el caso de la figura \ref{F1}:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=2]{Figures/F1.png}
+\caption{Recta secante entre dos puntos de una función $f(x)$.}
+\label{F1}
+\end{figure}
+
+Los puntos que forman la recta secante proveen la información de los cambio en ésta región de manera superficial, a razón que que hay muchos más cambios que no fueron mapeados. A medida que las diferencias absolutas de la imagen $\Delta\,f(x)$ y el dominio $\Delta\,X$ se reducen, los cambios mapeos se aproximan a un mapeo de un punto. De tal forma que en lugar de formar una recta secante, vuelve a parecerse como una recta tangente. Por lo que otra vez se vuelve a tener la misma forma descrita en la ecuación de la recta, obteniendo información de la pendiente en esa región. Cuando $\Delta\,f(x)\approx0$ y $\Delta\,X\approx0$, se tiene información puntual de la pendiente también conocido como el cambio instantáneo, por lo que se establece la definición de derivada:
+
+\begin{equation}
+\frac{\mathrm{d}f(x)}{\mathrm{d}x} \equiv \lim\limits_{\Delta\,X\rightarrow\,0}\frac{f(x + \Delta\,X) - f(X)}{\Delta\,X} = \lim\limits_{\Delta\,X\rightarrow\,0}\frac{\Delta\,Y}{\Delta\,X}
+\end{equation}
+
+En el mundo discreto, no existe la noción de infinitud ni continuidad. Por tanto los limites no se evalúan completamente, implicando que los puntos de nuestra función son cercanos pero siempre $\Delta\,X\approx0$ en lugar de $\Delta\,X=0$. Ésta aproximación alude a lo que se tratará en ésta sección, las diferencias finitas.\medskip
+
+El segundo elemento que se había mencionado en el inicio, corresponde a las series de Taylor. Una de las herramientas más poderosas que se tiene en los métodos numéricos, propiamente por simplificar conceptual y matemáticamente la noción de función, entre otras ventajas. La serie de Taylor es una aproximación a una función a través de una expansión alrededor de un punto $\alpha$ utilizando las derivadas de la función, definiendo:
+
+\begin{equation}
+f(x) = \sum\limits_{n=0}^{\infty}\frac{f^{(n)}(\alpha)}{n!}(x-\alpha)^n
+\end{equation}
+
+donde $n$ corresponde a la n-ésima derivada de la función, por tanto la función a expandir ha de ser del tipo suave, diferenciable en todo el dominio. Ésta expresión tiene el significado que una función es el resultado de la suma de todos los cambios posibles de ella misma, por tanto entre más cambios se tenga de la función, es posible generar una mejor reconstrucción de la función. Al observar el comportamiento de la expansión, a medida de que se toman las derivadas de orden superior, el coeficiente que acompaña la derivada es un número que cada vez es mucho menor, por tanto los aportes a la suma son menores en magnitud para las derivadas de orden superior. Por ejemplo para la sexta derivada de la función, $6! = 720$ por tanto el aporte de ésta derivada es $720$ veces más pequeño.
+
+Como se había mencionado anteriormente, ésta definición aplica para infinitos términos, pero en el mundo discreto ha de existir un número discreto de términos suficientes que permita aproximar la función de manera parcial. En ese caso la función se exige que sea diferenciable en el intervalo donde se realiza la expansión. A partir de ésta idea, también es posible generar aproximaciones no solamente a la función, sino también de las derivadas de la función.
+
+Éstas aproximaciones se realizan al realizar la expansión en series de Taylor hasta un cierto término y en un punto $\alpha$ que pertenece a un intervalo $[A-B]$. Dependiendo si la serie se realiza hacia la izquierda o a la derecha de $\alpha$ se define que la expansión es hacia atrás o hacia adelante, respectivamente. Ésto define el signo en los términos de la expansión. Adicionalmente el hecho que se incluya los límites del intervalo, implica que se está tratando de con una expansión centrada. A continuación, se presenta algunas de las aproximaciones a las derivadas de una función $f(x)$.
+
+\begin{equation}
+\frac{\mathrm{d}f(x)}{\mathrm{d}x} = \frac{f(x + h) - f(x -h)}{2h} - \frac{h^2}{6}\frac{\mathrm{d}^{3}f(x)}{\mathrm{d}x^{3}}
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}^{2}f(x)}{\mathrm{d}x^{2}} = \frac{f(x + h) - 2f(x) + f(x - h)}{h^2} + \frac{h^2}{12}\frac{\mathrm{d}^{4}f(x)}{\mathrm{d}x^{4}}
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}^{3}f(x)}{\mathrm{d}x^{3}} \approx \frac{f(x + 2h) - 2f(x + h) + 2f(x - h) - f(x - 2h)}{2h^3} + TOS(h^2)
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}^{4}f(x)}{\mathrm{d}x^{4}} \approx \frac{f(x + 2h) - 4f(x + h) + 6f(x) - 4f(x - h) + f(x - 2h)}{h^4} + TOS(h^2)
+\end{equation}
+
+donde $TOS(h^2)$ representa las contribuciones de los Términos de Orden Superior (TOS). Los términos con las derivas, dan indicio del orden de la expansión y del error analítico involucrado. En éste punto se puede observar lo fundamental que es el parámetro $h$ para generar las aproximaciones. Nótese que los ordenes superiores de las derivadas incluyen un factor de $h^2$, por tanto el error es menor.
+
+Otro tipo de aproximación de las derivadas se puede realizar en el caso en que se considera un intervalo $(A-B)$, en el que no se toma los extremos del intervalo no se evalúan. Ésta aproximación se define como expansión no centrada y es de particular uso en el caso en que el intervalo a mapear es un conjunto de datos interpolados. En el caso de las dos primeras derivadas, la expansión se tiene la forma:
+
+\begin{equation}
+\frac{\mathrm{d}f(x)}{\mathrm{d}x} = \frac{f(x + h) -  f(x)}{h} + TOS(h)
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}^{2}f(x)}{\mathrm{d}x^{2}} = \frac{f(x + 2h) -  2f(x + h) + f(x)}{h^2} + TOS(h)
+\end{equation}
+
+Nótese que éstas aproximaciones son más sencillas que la expansión centrada. Sin embargo el término de orden superior depende ahora de un $h$ con potencia de uno, implicando que hay mayor propagación de error en el truncamiento. Por tanto se sugiere que al utiliza éste tipo de expansión, utilizar valores no muy distantes para definir un adecuado valor para $h$.
+
+La diferenciación numérica se encarga de evidenciar los cambios locales de una sección de la función definido entre dos puntos $A$ y $B$. A medida que éstos puntos se acerquen entre sí, el cambio se vuelve más local. Mientras que al alejarse éstos valores o al crecer el intervalo de diferenciación, los cambios son por secciones, pero al ser tan grandes los cambios no se mapea correctamente y por tanto la precisión de la aproximación disminuye. Ésto se puede observar en un número pequeño al elevarlo a una potencia entera, entre más grande la potencia, mucho menor se vuelve el número, pero si el número es grande, la potencia crece la magnitud. Éste número corresponde a la diferencia que hay entre éstos, definiendo $h = |A-B|$ entre más pequeño sea $h$, los errores de truncamiento y el aporte de los ordenes superiores disminuyen, en el caso contrario, el error crece exponencialmente.
+
+
+\section{Descripción del método:}
+\label{chapter03:descripción-del-método}
+
+Respecto a la implementación realizada los siguientes diferenciadores, utilizan la formulación de la sección previa, para encontrar las derivadas locales de una función. La implementación también articula la expansión centrada y no centrada. En ambos casos una función analítica es ingresada como objeto lambda de python. Ésta función definida en el intervalo de derivación entre $A$ y $B$ se le asocia un valor de $h$ para generar un mapeo entre éstos puntos y calcular punto a punto las derivadas numéricas. Por tanto el resultado será una lista con éstos datos.
+
+Adicionalmente para el caso en que se tenga los datos de una función interpolada, estos datos pueden ser utilizados para ser calcular las derivadas de éstos. Sin embargo tanto en el caso de la función como en el caso de los datos, se requiere tener en cuenta que para una mejor precisión, el intervalo de diferenciación no ha de ser muy grande y asimismo, tener presente que las derivadas de orden superior expandidas son mucho más propensas en la pérdida de precisión, que las primeras dos derivadas. Para ésto se puede utilizar valores muy cercanos o en su defecto una expansión de derivas de contengan mayores términos para ganar mayor precisión, sin embargo ésto último no es una práctica común.
+
+A continuación los nombres de los programas:
+
 \begin{quote}
 \begin{description}
 \item[{-QCDA or Fourth Centered Difference Aproximation, calculates the fourth}] \leavevmode
@@ -602,10 +679,11 @@ derivative in the interval.
 
 Se encuentran los siguientes métodos diferenciadores no centrados:
 \begin{quote}
-
--nfirstderv
--nsecondderv
--snfirstderv
+\begin{description}
+\item[{nfirstderv}]\leavevmode
+\item[{nsecondderv}]\leavevmode
+\item[{snfirstderv}]\leavevmode
+\end{description}
 \end{quote}
 
 
