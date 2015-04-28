@@ -1,67 +1,68 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Capitulo 00: Introducci\IeC {\'o}n}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}B\IeC {\'u}squeda de Ra\IeC {\'\i }ces}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}M\IeC {\'e}todos Cerrados}{2}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}B\IeC {\'u}squedas Incrementales}{2}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Bisecci\IeC {\'o}n}{3}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Regla Falsa}{3}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}M\IeC {\'e}todos Abiertos}{3}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo de Punto Fijo}{4}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo de Newton-Raphson}{4}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'e}todo de Secante}{5}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Implementaci\IeC {\'o}n del m\IeC {\'e}todo:}{5}{section.2.3}
-\contentsline {section}{\numberline {2.4}Secuencia de llamado:}{5}{section.2.4}
-\contentsline {chapter}{\numberline {3}Capitulo 02: Interpoladores}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Interpolaci\IeC {\'o}n de Newton}{7}{section.3.1}
-\contentsline {section}{\numberline {3.2}Interpolaci\IeC {\'o}n de Lagrange}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}Splines}{8}{section.3.3}
-\contentsline {section}{\numberline {3.4}Splines de primer grado}{8}{section.3.4}
-\contentsline {section}{\numberline {3.5}Splines de segundo grado}{8}{section.3.5}
-\contentsline {section}{\numberline {3.6}Splines de tercer grado}{9}{section.3.6}
-\contentsline {section}{\numberline {3.7}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{10}{section.3.7}
-\contentsline {chapter}{\numberline {4}Capitulo 03: Diferenciadores}{11}{chapter.4}
-\contentsline {section}{\numberline {4.1}Diferenciaci\IeC {\'o}n num\IeC {\'e}rica}{11}{section.4.1}
-\contentsline {section}{\numberline {4.2}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{13}{section.4.2}
-\contentsline {chapter}{\numberline {5}Capitulo 04: Integradores}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{15}{section.5.1}
-\contentsline {chapter}{\numberline {6}Capitulo 05: Extrapoladores}{16}{chapter.6}
-\contentsline {section}{\numberline {6.1}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{16}{section.6.1}
-\contentsline {chapter}{\numberline {7}Documentaci\IeC {\'o}n e \IeC {\'I}ndice de los m\IeC {\'e}todos - English Ver.}{17}{chapter.7}
-\contentsline {section}{\numberline {7.1}adapquad.py}{17}{section.7.1}
-\contentsline {section}{\numberline {7.2}beziercurve.py}{17}{section.7.2}
-\contentsline {section}{\numberline {7.3}bisection.py}{18}{section.7.3}
-\contentsline {section}{\numberline {7.4}clampspline.py}{18}{section.7.4}
-\contentsline {section}{\numberline {7.5}compmidtrule.py}{18}{section.7.5}
-\contentsline {section}{\numberline {7.6}compsimprule.py}{19}{section.7.6}
-\contentsline {section}{\numberline {7.7}comptraprule.py}{19}{section.7.7}
-\contentsline {section}{\numberline {7.8}derivpol.py}{20}{section.7.8}
-\contentsline {section}{\numberline {7.9}FCDA.py}{20}{section.7.9}
-\contentsline {section}{\numberline {7.10}fixedpoint.py}{20}{section.7.10}
-\contentsline {section}{\numberline {7.11}fournodescotes.py}{21}{section.7.11}
-\contentsline {section}{\numberline {7.12}gaussdblint.py}{21}{section.7.12}
-\contentsline {section}{\numberline {7.13}gausstpllint.py}{22}{section.7.13}
-\contentsline {section}{\numberline {7.14}hermitpoly.py}{22}{section.7.14}
-\contentsline {section}{\numberline {7.15}midpointrule.py}{23}{section.7.15}
-\contentsline {section}{\numberline {7.16}muller.py}{23}{section.7.16}
-\contentsline {section}{\numberline {7.17}natspline.py}{24}{section.7.17}
-\contentsline {section}{\numberline {7.18}nevilletable.py}{24}{section.7.18}
-\contentsline {section}{\numberline {7.19}newtondivdef.py}{25}{section.7.19}
-\contentsline {section}{\numberline {7.20}nfirstderv.py}{25}{section.7.20}
-\contentsline {section}{\numberline {7.21}nsecondderv.py}{26}{section.7.21}
-\contentsline {section}{\numberline {7.22}onenodeopn.py}{26}{section.7.22}
-\contentsline {section}{\numberline {7.23}polyroot.py}{27}{section.7.23}
-\contentsline {section}{\numberline {7.24}QCDA.py}{27}{section.7.24}
-\contentsline {section}{\numberline {7.25}regulafalsi.py}{27}{section.7.25}
-\contentsline {section}{\numberline {7.26}richarexpol.py}{28}{section.7.26}
-\contentsline {section}{\numberline {7.27}romberginteg.py}{28}{section.7.27}
-\contentsline {section}{\numberline {7.28}SCDA.py}{28}{section.7.28}
-\contentsline {section}{\numberline {7.29}secant.py}{29}{section.7.29}
-\contentsline {section}{\numberline {7.30}simpdblintg.py}{29}{section.7.30}
-\contentsline {section}{\numberline {7.31}simprule.py}{30}{section.7.31}
-\contentsline {section}{\numberline {7.32}snfirstderv.py}{30}{section.7.32}
-\contentsline {section}{\numberline {7.33}TCDA.py}{31}{section.7.33}
-\contentsline {section}{\numberline {7.34}tesimprule.py}{31}{section.7.34}
-\contentsline {section}{\numberline {7.35}thrnodeopn.py}{32}{section.7.35}
-\contentsline {section}{\numberline {7.36}trapzrule.py}{32}{section.7.36}
-\contentsline {section}{\numberline {7.37}twonodeopn.py}{33}{section.7.37}
-\contentsline {chapter}{Python Module Index}{35}{section*.3}
+\contentsline {chapter}{\numberline {1}Capitulo 01: Introducci\IeC {\'o}n}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Capitulo 02: M\IeC {\'e}todos de B\IeC {\'u}squeda de Ra\IeC {\'\i }ces}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}M\IeC {\'e}todos Cerrados}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}B\IeC {\'u}squedas Incrementales}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Bisecci\IeC {\'o}n}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Regla Falsa}{5}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}M\IeC {\'e}todos Abiertos}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo de Punto Fijo}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo de Newton-Raphson}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'e}todo de Secante}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Implementaci\IeC {\'o}n del m\IeC {\'e}todo:}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Secuencia de llamado:}{7}{section.2.4}
+\contentsline {chapter}{\numberline {3}Capitulo 03: Interpoladores}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Interpolaci\IeC {\'o}n de Newton}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Interpolaci\IeC {\'o}n de Lagrange}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Splines}{10}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Splines de primer grado}{10}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Splines de segundo grado}{10}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Splines de tercer grado}{11}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{12}{section.3.4}
+\contentsline {chapter}{\numberline {4}Capitulo 04: Diferenciadores}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Diferenciaci\IeC {\'o}n num\IeC {\'e}rica}{13}{section.4.1}
+\contentsline {section}{\numberline {4.2}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{15}{section.4.2}
+\contentsline {chapter}{\numberline {5}Capitulo 05: Integradores}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}Integraci\IeC {\'o}n Num\IeC {\'e}rica}{17}{section.5.1}
+\contentsline {section}{\numberline {5.2}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{18}{section.5.2}
+\contentsline {chapter}{\numberline {6}Capitulo 06: Extrapoladores}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{19}{section.6.1}
+\contentsline {chapter}{\numberline {7}Documentaci\IeC {\'o}n e \IeC {\'I}ndice de los m\IeC {\'e}todos - English Ver.}{20}{chapter.7}
+\contentsline {section}{\numberline {7.1}adapquad.py}{20}{section.7.1}
+\contentsline {section}{\numberline {7.2}beziercurve.py}{20}{section.7.2}
+\contentsline {section}{\numberline {7.3}bisection.py}{21}{section.7.3}
+\contentsline {section}{\numberline {7.4}clampspline.py}{21}{section.7.4}
+\contentsline {section}{\numberline {7.5}compmidtrule.py}{21}{section.7.5}
+\contentsline {section}{\numberline {7.6}compsimprule.py}{22}{section.7.6}
+\contentsline {section}{\numberline {7.7}comptraprule.py}{22}{section.7.7}
+\contentsline {section}{\numberline {7.8}derivpol.py}{23}{section.7.8}
+\contentsline {section}{\numberline {7.9}FCDA.py}{23}{section.7.9}
+\contentsline {section}{\numberline {7.10}fixedpoint.py}{23}{section.7.10}
+\contentsline {section}{\numberline {7.11}fournodescotes.py}{24}{section.7.11}
+\contentsline {section}{\numberline {7.12}gaussdblint.py}{24}{section.7.12}
+\contentsline {section}{\numberline {7.13}gausstpllint.py}{25}{section.7.13}
+\contentsline {section}{\numberline {7.14}hermitpoly.py}{25}{section.7.14}
+\contentsline {section}{\numberline {7.15}midpointrule.py}{26}{section.7.15}
+\contentsline {section}{\numberline {7.16}muller.py}{26}{section.7.16}
+\contentsline {section}{\numberline {7.17}natspline.py}{27}{section.7.17}
+\contentsline {section}{\numberline {7.18}nevilletable.py}{27}{section.7.18}
+\contentsline {section}{\numberline {7.19}newtondivdef.py}{28}{section.7.19}
+\contentsline {section}{\numberline {7.20}nfirstderv.py}{28}{section.7.20}
+\contentsline {section}{\numberline {7.21}nsecondderv.py}{29}{section.7.21}
+\contentsline {section}{\numberline {7.22}onenodeopn.py}{29}{section.7.22}
+\contentsline {section}{\numberline {7.23}polyroot.py}{30}{section.7.23}
+\contentsline {section}{\numberline {7.24}QCDA.py}{30}{section.7.24}
+\contentsline {section}{\numberline {7.25}regulafalsi.py}{30}{section.7.25}
+\contentsline {section}{\numberline {7.26}richarexpol.py}{31}{section.7.26}
+\contentsline {section}{\numberline {7.27}romberginteg.py}{31}{section.7.27}
+\contentsline {section}{\numberline {7.28}SCDA.py}{31}{section.7.28}
+\contentsline {section}{\numberline {7.29}secant.py}{32}{section.7.29}
+\contentsline {section}{\numberline {7.30}simpdblintg.py}{32}{section.7.30}
+\contentsline {section}{\numberline {7.31}simprule.py}{33}{section.7.31}
+\contentsline {section}{\numberline {7.32}snfirstderv.py}{33}{section.7.32}
+\contentsline {section}{\numberline {7.33}TCDA.py}{34}{section.7.33}
+\contentsline {section}{\numberline {7.34}tesimprule.py}{34}{section.7.34}
+\contentsline {section}{\numberline {7.35}thrnodeopn.py}{35}{section.7.35}
+\contentsline {section}{\numberline {7.36}trapzrule.py}{35}{section.7.36}
+\contentsline {section}{\numberline {7.37}twonodeopn.py}{36}{section.7.37}
+\contentsline {chapter}{Python Module Index}{38}{section*.3}

@@ -23,9 +23,9 @@
 \DeclareGraphicsExtensions{.jpg, .pdf, .png, .gif, .jpeg}
 
 \theoremstyle{plain}%Rotulo en negrilla y texto en italicas
-\newtheorem{definicion}{Definicíon}[chapter]
+\newtheorem{definicion}{Definición}[chapter]
 \newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{proposicion}{Proposicíon}[chapter]
+\newtheorem{proposicion}{Proposición}[chapter]
 \newtheorem{postulado}{Postulado}[chapter]
 
 \theoremstyle{definition}%Rotulo en negrilla y texto normal
@@ -56,12 +56,12 @@
 \newcommand{\Hrule}{\rule{\linewidth}{1mm}}
 
 
-\title{Interactive-Numeric Documentation}
-\date{March 16, 2015}
-\release{1.2}
-\author{Semillero de Fisica Teorica y Computacional}
+\title{Documentación del módulo: \\ Numéricos - Interactivo para Python 3.4}
+\date{Marzo 16, 2015}
+\release{1.3}
+\author{Semillero de Fisica Teorica y Computacional \\ Universidad EAFIT}
 \newcommand{\sphinxlogo}{}
-\renewcommand{\releasename}{Release}
+\renewcommand{\releasename}{Versión}
 \makeindex
 
 \makeatletter
@@ -164,33 +164,157 @@
 
 \maketitle
 \tableofcontents
-\phantomsection\label{index::doc}
+\phantomsection\label{Índice::doc}
 
-\chapter{Capitulo 00: Introducción}
-\label{chapter00::doc}\label{chapter00:capitulo-01-interpoladores}
+\chapter{Capitulo 01: Introducción}
+\label{chapter01::doc}\label{chapter01:capitulo-01-Introducción}
 
 
-\noindent Esta es la documentación oficial del proyecto cofinanciado por Colciencias desarrollado por el Semillero de Física Teórica y Computacional \href{https://sites.google.com/site/fisicatyc/home}{https://sites.google.com/site/fisicatyc/home}.
+\noindent Esta es la documentación oficial del proyecto cofinanciado por Colciencias desarrollado por el Semillero de Física Teórica y Computacional de la Universidad EAFIT, cuyo sitio oficial se encuentra en el hipervínculo: \href{https://sites.google.com/site/fisicatyc/home}{https://sites.google.com/site/fisicatyc/home}. El objetivo principal del proyecto está en que un estudiante por medio de las herramientas habilidades, encuentre un camino más interactivo para el estudio del análisis numérico al igual que la programación e implementación de algoritmos, particularmente para la plataforma de \textit{Python 3.4}\href{https://www.python.org/}{https://www.python.org/}.
 
-El proyecto Numéricos - Interactivos es una implementación en Python 3.4 de los métodos numéricos
-elementales de Búsqueda de Raíces, Interpolación, Diferenciación e Integración.
+El proyecto Numéricos - Interactivos es una implementación en \textit{Python 3.4} de algunos de los métodos numéricos
+elementales de las categorías de Búsqueda de Raíces, Extrapolación, Interpolación, Diferenciación e Integración. Cada una de éstas se encuentra como submódulos de la librería principal, permitiendo cargar selectivamente los diferentes algoritmos. Cada algoritmo posee una descripción conceptual y características del programa para su correcta utilización. Los comentarios y notaciones de los programas se encuentra en \textit{inglés} para favorecer el alcance los códigos y una mayor distribución. La información del documento se encuentra en \textit{español}.
 
-El repositorio vigente del proyecto puede encontrarse en GitHub en el vínculo:
+El repositorio vigente del proyecto puede encontrarse en \textit{GitHub} en el vínculo:
 
 \href{https://github.com/fisicatyc/numericos-interactivo}{https://github.com/fisicatyc/numericos-interactivo}
 
-Requerimientos:
-\begin{quote}
+El proyecto se encuentra como código abierto y está a disposición para ser mejorado, modificado y expandido sin ningún tipo de restricción bajo la licencia \textit{GNU}. Los respectivos créditos han de hacerse al desarrollo original por parte del Semillero de Física Teórica - Universidad EAFIT. La contribución directa puede realizarse a través de la plataforma \textit{GitHub}.
 
-El proyecto fue desarrollado utilizando las funciones Built-In de Python 3.4 por lo que no es
-necesario otro tipo paquetes para su funcionamiento.
+El repositorio, posee tanto los códigos fuentes, como los \textit{Ipython Notebooks} de algunos de los algoritmos. En los \textit{notebooks} se hace una revisión conceptual y explicación del funcionamiento, limitaciones de los métodos, posibles aplicaciones junto con una puesta en marcha de los algoritmos a través de la visualización y tabulación de datos dinámicos, a partir de los datos que ingrese el usuario.
+
+Los \textit{notebooks} están diseñados para instruir y cautivar estudiantes universitarios en las áreas de ciencias de la computación y ciencias matemáticas para favorecer el aprendizaje conceptual, junto con las habilidades de programación. Ésta material adicional no es necesario para ejecutar las librerías.
+
+\textbf{Requerimientos:}
+
+\begin{quote}
+El proyecto fue desarrollado utilizando las funciones Built-In de \textit{Python 3.4} por lo que no es
+necesario otro tipo paquetes para su funcionamiento. Recomendamos la distribución multiplataforma \textit{Anaconda} para \textit{Python} \href{https://store.continuum.io/cshop/anaconda/}{https://store.continuum.io/cshop/anaconda/}, para obtener el paquete de utilidades básicos para poder utilizar \textit{Ipython Notebook} y \textit{Python 3.4}.
 \end{quote}
 
-El objetivo principal de este proyecto es que el usuario por medio de las herramientas facilitadas en este, encuentre un camino más interactivo para el estudio del análisis numérico. Se ***************************
+\textbf{Adquisición del código}
 
-\chapter[Búsqueda de Raíces]{Métodos de Búsqueda de Raíces}
+\begin{quote}
+Para obtener acceso a los archivos del repositorio es posible descargar como \textit{zip} directamente los archivos del proyecto y localizarlos en cualquier directorio. Asimismo se puede disponer acceso al registrarse gratuitamente en \textit{GitHub} y crear un clon del repositorio. Otra manera está en cargar directamente las librerías con la función de \textit{python} $\% load$ y la respectiva URL del código.
+\end{quote}
+
+\textbf{Cargar las librerías en \textit{Python}}
+\begin{quote}
+Para cargar las librerías desde cualquier consola de \textit{python}, es necesario trabajar sobre el mismo directorio donde se encuentre el módulo $Numericos$. Una vez en éste directorio es posible ejecutar la linea de código:
+
+	\begin{verbatim}
+	from Numericos import Numericos
+	\end{verbatim}
+	
+Sin embargo está sola secuencia no carga los archivos de las librerías, sino las características del paquete. Para acceder a los submódulos, la instrucción de importe ha de incluir el submódulo respectivo, por ejemplo para el paquete integradores, la secuencia de llamado es:
+
+	\begin{verbatim}
+	from Numericos.lib import integrators
+	\end{verbatim}
+
+Dentro de cada uno de los 5 submódulos están otros submódulos que definen los distintos métodos implementados. En el esquema siguiente se muestra el contenido del directorio principal.
+\end{quote}
+
+\begin{verbatim}
+numericos interactivo/                                  -> Carpeta Padre
+                         					
+            Notebook files/               				-> Recursos Adicionales con Notebooks
+
+                        Estructura y notas del programa.ipynb
+                        Integración Numérica.ipynb
+						    
+            project_2014_numerical_methods/    			-> Carpeta de librerias de Python
+		                  		
+                        Numericos/
+\end{verbatim}	
+
+\begin{quote}
+En la carpeta de $Numericos$ se encuentra contenido todo el código fuente en los diferentes submódulos, con la siguiente jerarquía que se presenta en el esquema siguiente:
+\end{quote}
+
+\begin{verbatim}
+
+Numericos/                          -> Módulo principal
+          __init__.py
+          doc/                      -> Documentación
+          lib/                      ->Librería principal
+                    __init__.py
+                    differentiators/  -> Submódulo de derivación numérica
+                                  __init__.py
+                                  centraldiff/
+                                              __init__.py
+                                              FCDA.py
+                                              SCDA.py
+                                              TCDA.py
+                                              QCDA.py
+                                  ncentraldiff/
+                                              __init__.py
+                                              nfirstderv.py
+                                              nsecondderv.py
+                                              snfirstderv.py
+                                              
+                    extrapolators/  -> Submódulo de extrapoladores
+                                  __init__.py
+                                  richarexpol.py
+                                  
+                    integrators/    -> Submódulo de integración numérica
+                                  __init__.py
+                                  AdvanceIntegration
+                                              adapquad.py
+                                              romberginteg.py
+                                  closednewtoncotes/
+                                              __init__.py
+                                              fournodescotes.py
+                                              simprule.py
+                                              tesimprule.py
+                                              trapzrule.py
+                                  compositerules/
+                                              __init__.py
+                                              compmidtrule.py
+                                              compsimprule.py
+                                              comptraprule.py
+                                  doubleIntegral/
+                                              __init__.py
+                                              gaussdblint.py
+                                              simpdblintg.py
+                                  opennewtoncotes/
+                                              __init__.py
+                                              midpointrule.py
+                                              onenodeopn.py
+                                              thrnodeopn.py
+                                              twonodeopn.py
+                                  tripleIntegral/
+                                              __init__.py
+                                              gausstpllint.py
+			                                  
+                    interpolators/  -> Submódulo de interpolación
+                                  __init__.py
+                                  beziercurve.py
+                                  clampspline.py
+                                  derivpol.py
+                                  hermitpoly.py
+                                  natspline.py
+                                  nevilletable.py
+                                  newtondivdef.py
+                                  
+                    rootFinders/  -> Submódulo de búsqueda de raíces
+                                  __init__.py
+                                  bisection.py
+                                  fixedpoint.py
+                                  muller.py
+                                  polyroot.py
+                                  regulafalsi.py
+                                  secant.py
+\end{verbatim}
+
+En los capítulos siguientes se aborda una discusión sobre la formulación matemática y características generales de cada algoritmo.
+
+\chapter{Capitulo 02: Métodos de Búsqueda de Raíces}
+\label{chapter02::doc}\label{chapter02:capitulo-02-Búsqueda de Raíces}
 
 \section{Métodos Cerrados}
+\label{chapter02:Métodos Cerrados}
+
 \noindent Los métodos cerrados son métodos que requieren de dos valores iniciales para la búsqueda de
 raíces, los cuales son los valores de los extremos de un intervalo que encierra una raíz. Estos
 métodos siempre son convergentes pero suelen ser algo lentos.\medskip
@@ -221,6 +345,7 @@ del cual se halla la raíz, o en otras palabras la aproximación del valor de la
 como búsquedas incrementales, bisección y regla falsa.\noindent
 
 \subsection{Búsquedas Incrementales}
+\label{chapter02:Búsquedas Incrementales}
 
 \noindent Los métodos de búsquedas incrementales aprovechan la característica de la ec.\ref{Bolz} para determinar el intervalo en el cuál se encuentra por lo menos una raíz, con un error igual a la mitad del tamaño de paso del avance en el intervalo. Para mejorar la precisión del método, una vez localizado el intervalo que presenta cambio de signo, este se puede subdividir en mas intervalos y nueva mente aplicar el método de búsquedas incrementales.\medskip
 
@@ -253,6 +378,7 @@ Este método introduce a la aproximación de la raíz un conocimiento del compor
 \noindent Dada la consideración del comportamiento de la función tenida en regla falsa, este método en general presenta una convergencia mayor a los otros métodos cerrados. En algunos casos, el método presenta puntos de estancamiento y debe plantearse un criterio de parada adicional al error y modificar la forma iterativa del método alterando la magnitud de uno de los extremos del intervalo.\medskip
 
 \section{Métodos Abiertos}
+\label{chapter02:Métodos Abiertos}
 
 \noindent Los métodos abiertos son métodos cuya formulación solo requiere de un valor inicial para estimar la raíz de la función. Estos métodos no necesariamente son convergentes, pero cuando lo logran generalmente son mas rápidos que los métodos cerrados. Esta situación puede darse gracias a que los métodos abiertos toman consideraciones acerca de la geometría de la función particular que se desea.\medskip
 
@@ -335,10 +461,8 @@ Si $f\prime(x)\neq 0$ las raíces de \[ u(x)=\frac{f(x)}{f\prime(x)}\] serán la
 x_{i+1}=x_{i}-\frac{f(x_{i})\Delta x}{f(x_{i}+\Delta x)-f(x_{i})} \label{secantem}
 \end{equation}
 
-\label{chapter01::doc}\label{chapter01:bienvenido-a-la-documentacion-de-numericos-interactivos}\label{chapter01:capitulo-01-busqueda-de-raices}
 
 \section{Implementación del método:}
-
 \label{chapter01:descripcion-del-metodo}
 
 \noindent En este módulo se aplican los métodos de búsqueda de la raíces de una función, lo cual vendría a ser la búsqueda de todo elemento x que pertenezca al dominio de la función y que dicha función  cumpla f(x) = 0.\medskip
@@ -357,8 +481,8 @@ Dentro del paquete rootFinders se encuentran los siguientes métodos para la bú
 \end{quote}
 
 \section{Secuencia de llamado:}
-
 \label{chapter01:sequencia-de-llamado}
+
 \noindent Cada método corresponde a un archivo de extensión .py, que en el paquete se pueden encontrar como:\medskip
 
 \begin{notice}{note}{Note:}
@@ -371,8 +495,8 @@ Para ejecutar éstas funciones desde cualquier terminal de Python 3.4, es necesa
 from Numericos.lib.rootFinders import *
 \end{notice}
 
-Éste comando cargará simultaneamente los seis métodos del paquete. Para ejecutar un cálculo, es necesario agregar `rootFinders.(método)',
-y sus respectivos argumentos. En el caso de bisección la sequencia sería:
+Éste comando cargará simultáneamente los seis métodos del paquete. Para ejecutar un cálculo, es necesario agregar `rootFinders.(método)',
+y sus respectivos argumentos. En el caso de bisección la secuencia sería:
 
 \begin{notice}{note}{Note:}
 rootFinders.bisection((`6*x-6'),-5,6,200,0.005);
@@ -387,8 +511,8 @@ from Numericos.lib.rootFinders import muller
 De ésta manera solamente el método de Müller esta disponible para operar. Ésta forma simplifica la forma de llamado.
 
 
-\chapter{Capitulo 02: Interpoladores}
-\label{chapter02::doc}\label{chapter02:capitulo-02-interpoladores}
+\chapter{Capitulo 03: Interpoladores}
+\label{chapter03::doc}\label{chapter03:capitulo-03-Interpoladores}
 
 \noindent En general, para las aplicaciones de la ingeniería y de la investigación aplicada, sera necesario partir de información obtenida experimentalmente, lo que traduce en que la información que poseemos no es una función continua que describe el fenómeno sino de un conjunto de puntos cuya única relación inicial es que fueron obtenidos de un mismo experimento u observación de un fenómeno. El paso siguiente a partir de la obtención de estos puntos, es la obtención de una curva que describa adecuadamente los puntos (ya sea aproximándolos -curvas de regresión- o atravesándolos -curvas interpolantes-) y a partir de las cuales sea posible
 construir modelos matemáticos para la descripción del fenómeno y permitan realizar predicciones acerca del mismo (al igual que estudiar el comportamiento para las condiciones no obtenidas experimentalmente). En cuanto a la interpolación, se recurre generalmente a la interpolación polinomial.\medskip
@@ -396,6 +520,7 @@ construir modelos matemáticos para la descripción del fenómeno y permitan rea
 \noindent Para un conjunto de $n + 1$ puntos, existe un ubico polinomio de grado n que pasa por todos los puntos. Para construir este polinomio existen varias técnicas, como lo son Interpolación de Newton en diferencias divididas, Interpolación de Lagrange, calculo de los coeficientes directamente mediante un sistema de ecuaciones y otros. Igualmente, existen métodos de interpolación, que producen curvas suaves que pasan por todos los puntos, y que en general pueden acercarse mucho mas a la descripción del fenómeno, mas no son un polinomio, sino funciones por tramos que se constituyen de polinomios de grados bajos. Estos son los splines o trazadores.\medskip
 
 \section{Interpolación de Newton}
+\label{chapter03:Interpolación de Newton}
 
 Se puede formular de manera general como:
 
@@ -403,13 +528,14 @@ Se puede formular de manera general como:
 	f_n(x) = \sum\limits_{i=0}^{n}f(x_i)\prod\limits_{j=0}^{i-1}(x-x_j)
 \end{equation}
 
-Algoritmicamente es posible plantear una alternativa mediante la utilización de
+Algorítmicamente es posible plantear una alternativa mediante la utilización de
 diferencias divididas (lo cual no se discutirá).
 
 \section{Interpolación de Lagrange}
+\label{chapter03:Interpolación de Lagrange}
 
 El método de interpolación de Lagrange es una reformulación del método de
-interpolacién de Newton (ec.3.1), que evita el cálculo de las diferencias divididas.
+interpolación de Newton (ec.3.1), que evita el cálculo de las diferencias divididas.
 El polinomio resultante se puede expresar como:
 
 \begin{equation}
@@ -426,25 +552,29 @@ La formulación de Lagrange (ec.3.2) es posible comprenderse si se observa que e
 termino Li(x) a partir de ec.3.3 es 1 si x = xi y 0 para los demás puntos.
 
 \section{Splines}
+\label{chapter03:Splines}
 
 La utilización de la interpolación polinomial, al usar polinomios de grados
 grandes pueden propagar errores de redondeo significativos y conducir a resultados
 erróneos, además de que la existencia de puntos alejados entre si trae como
 consecuencia curvas no muy bien comportadas.
+
 En general, es de esperar que el comportamiento de un sistema no posee cambios
 bruscos y se refleje por ende en curvas suaves. Para ello, se propone una alternativa
 de interpolación, los splines.
+
 Los splines o trazadores, utilizan polinomios de grados menores para interpolar
 subconjuntos de puntos. Entre cada par de puntos se usa un polinomio interpolante,
 y cuyas condiciones para hallar los coeficientes se establecen a partir de
 condiciones de continuidad de la función y de sus primeras derivadas.
+
 Es usual, el caso de los splines cúbicos, los cuales crean curvas suaves entre los
 puntos a interpolar con oscilaciones mínimas. Los splines cúbicos, son la forma
 resultante de poner una banda elástica a rodear los puntos (alfileres). Esto puede
 dar idea de un principio de mínima energía, y por ende de lo apropiados que
 pueden ser en la descripción de fenómenos naturales.
 
-\section{Splines de primer grado}
+\subsection{Splines de primer grado}
 
 Corresponde al caso mas sencillo de unión entre dos puntos, mediante el trazado de una linea recta.
 
@@ -466,7 +596,7 @@ Las pendientes indicadas en ec.3.4 corresponden a
 	m_i=\frac{f(x_{i+1})-f(x_i)}{x_{i+1}-x_i}
 \end{equation}
 
-\section{Splines de segundo grado}
+\subsection{Splines de segundo grado}
 
 Los trazadores de grado superior son usuales para asegurar la continuidad de
 las primeras derivadas de la función. Si se requieren m derivadas continuas, se
@@ -497,7 +627,7 @@ para formar las $3n$ ecuaciones para solucionar el sistema de ecuaciones.
 		f(x_{i-1})=a_ix^2_{i-1}+b_ix_i+c_i
 	\end{equation}
 	
-	Observese que por cada nodo interior se generar 2 ecuaciones, lo cual produce en total $2(n-2)$ ecuaciones.
+	Obsérvese que por cada nodo interior se generar 2 ecuaciones, lo cual produce en total $2(n-2)$ ecuaciones.
 	
 	\item La primera y última función deben pasar por los puntos extremos.
 	
@@ -524,7 +654,7 @@ para formar las $3n$ ecuaciones para solucionar el sistema de ecuaciones.
 
 El siguiente paso, es resolver el sistema de ecuaciones para obtener los coeficientes.
 
-\section{Splines de tercer grado}
+\subsection{Splines de tercer grado}
 
 Para los trazadores cúbicos tenemos como expresión general $f_i(x) = a_ix^
 3 +
@@ -555,29 +685,33 @@ del costo computacional.
 
 \section{Descripción del método:}
 \label{chapter02:descripcion-del-metodo}
-Este módulo se encarga de la implementación de los métodos de interpolación, que se basa en la problemática de tener n+1 puntos secuenciales,
+
+Este módulo se encarga de la implementación de los métodos de interpolación, que se basa en la problemática de tener $n+1$ puntos secuenciales,
 donde x0 \textless{} x1 \textless{} x2 \textless{} x3 \textless{} ... \textless{} xn, y a partir de estos puntos diferentes se va a definir una función polinómica que pase por esos puntos.
 Básicamente se está aproximando p(x)= y a una f(x)= y original, a la cual probablemente no se tiene acceso o conocimiento. Esto se hace con el fin
-de modelar el comportamiento de los puntos anteriores y obtener el ``polinomio interpolante''.
+de modelar el comportamiento de los puntos anteriores y obtener el "polinomio interpolante".
 
 Se encuentran los siguientes métodos interpoladores:
 \begin{quote}
-
--Beziercurve Method
--Clampspline Method
--Derivpol Method
--Hermitpoly Method
--Nevilletable Method
--Newtondivdef Method
--Natspline Method
+\begin{description}
+\item[{-Beziercurve Method}]Página: \pageref{code:module-beziercurve}
+\item[{-Clampspline Method}]Página: \pageref{code:module-clampspline}
+\item[{-Derivpol Method}]Página: \pageref{code:module-derivpol}
+\item[{-Hermitpoly Method}]Página: \pageref{code:module-hermitpoly}
+\item[{-Nevilletable Method}]Página: \pageref{code:module-nevilletable}
+\item[{-Newtondivdef Method}]Página: \pageref{code:module-newtondivdef}
+\item[{-Natspline Method}]Página: \pageref{code:module-natspline}
+\end{description}
 \end{quote}
 
+Cada uno de éstos métodos requieren variaciones en las entradas del algoritmo por lo que se sugiere verificar la documentación directa de las funciones, visitando los anteriores vínculos señalados en el texto.
 
-\chapter{Capitulo 03: Diferenciadores}
-\label{chapter03::doc}\label{chapter03:capitulo-03-diferenciadores}
+
+\chapter{Capitulo 04: Diferenciadores}
+\label{chapter04::doc}\label{chapter04:capitulo-04-diferenciadores}
 
 \section{Diferenciación numérica}
-\label{chapter03:Diferenciación numérica}
+\label{chapter04:Diferenciación numérica}
 
 En este módulo se aplican los métodos diferenciadores o también conocidos como diferencias finitas. Se van a categorizar como diferencias centradas y no centradas, donde la primera define un conjunto de métodos numéricos en diferencias finitas con paso centrado. Y en los métodos no centrados se define un conjunto de métodos numéricos basándose en diferencias finitas SIN paso centrado.
 Estas técnicas se emplean muy a menudo en análisis numérico, especialmente en ecuaciones numéricas ordinarias, ecuaciones en diferencias y ecuaciones.
@@ -652,9 +786,9 @@ La diferenciación numérica se encarga de evidenciar los cambios locales de una
 
 
 \section{Descripción del método:}
-\label{chapter03:descripción-del-método}
+\label{chapter04:descripción-del-método}
 
-Respecto a la implementación realizada los siguientes diferenciadores, utilizan la formulación de la sección previa, para encontrar las derivadas locales de una función. La implementación también articula la expansión centrada y no centrada. En ambos casos una función analítica es ingresada como objeto lambda de python. Ésta función definida en el intervalo de derivación entre $A$ y $B$ se le asocia un valor de $h$ para generar un mapeo entre éstos puntos y calcular punto a punto las derivadas numéricas. Por tanto el resultado será una lista con éstos datos.
+Respecto a la implementación realizada los siguientes diferenciadores, utilizan la formulación de la sección previa, para encontrar las derivadas locales de una función. La implementación también articula la expansión centrada y no centrada. En ambos casos una función analítica es ingresada como objeto lambda de \textit{python}. Ésta función definida en el intervalo de derivación entre $A$ y $B$ se le asocia un valor de $h$ para generar un mapeo entre éstos puntos y calcular punto a punto las derivadas numéricas. Por tanto el resultado será una lista con éstos datos.
 
 Adicionalmente para el caso en que se tenga los datos de una función interpolada, estos datos pueden ser utilizados para ser calcular las derivadas de éstos. Sin embargo tanto en el caso de la función como en el caso de los datos, se requiere tener en cuenta que para una mejor precisión, el intervalo de diferenciación no ha de ser muy grande y asimismo, tener presente que las derivadas de orden superior expandidas son mucho más propensas en la pérdida de precisión, que las primeras dos derivadas. Para ésto se puede utilizar valores muy cercanos o en su defecto una expansión de derivas de contengan mayores términos para ganar mayor precisión, sin embargo ésto último no es una práctica común.
 
@@ -662,17 +796,17 @@ A continuación los nombres de los programas:
 
 \begin{quote}
 \begin{description}
-\item[{-QCDA or Fourth Centered Difference Aproximation, calculates the fourth}] \leavevmode
-derivative in the interval.
+\item[{-FCDA o First Centered Difference Aproximation:}] \leavevmode
+Calcula la primera derivada central de una función en el intervalo dado.
 
-\item[{-SCDA or Second Centered Difference Aproximation, calculates the second}] \leavevmode
-derivative in the interval.
+\item[{-SCDA o Second Centered Difference Aproximation:}] \leavevmode
+Calcula la segunda derivada central de una función en el intervalo dado.
 
-\item[{-TCDA or Third Centered Difference Aproximation, calculates the third}] \leavevmode
-derivative in the interval.
+\item[{-TCDA o Third Centered Difference Aproximation:}] \leavevmode
+Calcula la tercera derivada central de una función en el intervalo dado.
 
-\item[{-QCDA or Fourth Centered Difference Aproximation, calculates the fourth}] \leavevmode
-derivative in the interval.
+\item[{-QCDA o Fourth Centered Difference Aproximation:}] \leavevmode
+Calcula la cuarta derivada central de una función en el intervalo dado.
 
 \end{description}
 \end{quote}
@@ -680,67 +814,90 @@ derivative in the interval.
 Se encuentran los siguientes métodos diferenciadores no centrados:
 \begin{quote}
 \begin{description}
-\item[{nfirstderv}]\leavevmode
-\item[{nsecondderv}]\leavevmode
-\item[{snfirstderv}]\leavevmode
+\item[{-nfirstderv}]\leavevmode
+\item[{-nsecondderv}]\leavevmode
+\item[{-snfirstderv}]\leavevmode
 \end{description}
 \end{quote}
 
+Para los ordenes superiores de diferenciación, no se recomienda utilizar ésta versión no centrada por la propagación del error, ya que en éste caso el factor $h$ de potencia uno otorga más peso en las contribuciones de los $TOS$, aumentando el error de truncamentiento.
 
-\chapter{Capitulo 04: Integradores}
-\label{chapter04::doc}\label{chapter04:capitulo-04-integradores}
+\chapter{Capitulo 05: Integradores}
+\label{chapter05::doc}\label{chapter05:capitulo-05-integradores}
+
+\section{Integración Numérica}
+\label{chapter05:Integración Numérica}
+La integración numérica es una de las herramientas más utilizadas eb distintas disciplinas de las ciencias exactas y la ingeniería. Los distintos métodos existentes parten de la idea de discretizar el proceso de integración como la suma de contribuciones n-ésimas partes de un intervalo. La idea de éstas aproximaciones pueden evidenciarse con el desarrollo de las \textit{Sumas de Riemann}, al descomponer el área de cualquier curva como la suma de múltiples áreas de diferentes rectángulos.
+
+\begin{equation}
+\int\limits_{a}^{b} \mathrm{f}(x)\mathrm{d}x = \sum\limits_{n=1}^{\infty} \lim_{x_{n} - x_{n-1}\to 0}\ f(x_{n})(x_{n} - x_{n-1}); x\in[b - a]
+\end{equation}
+
+El proceso de discretización permite seleccionar el tipo de área conocida para mapear el área de una función, de ésta manera es posible obtener una aproximación que dependerá del número de elementos que mapean la función y el área conocida. Bajo ésta idea los métodos de integración básica pueden presentarse en las formulas de Newton - Cotes.
+
+Las formulas de Newton - Cotes cerradas son un amplio conjunto de técnicas de integración utilizando la idea de descomponer el dominio de integración $x\in[a, b]$ en $n$ puntos equidistantes a una distancia $h$. La imagen de éstos puntos en la función representan el comportamiento de algunas de las partes más relevantes. La idea descomponer el dominio y su imagen, también puede ser vista como la interpolación de la función a través de un polinomio de grado $n$. El área entonces se calcula al sumar la contribución ponderada (las imágenes de los puntos por un factor de escala) multiplicado por el factor ponderado de espaciamiento $h$, estableciendo:
+
+\begin{equation}
+\int\limits_{a}^{b} \mathrm{f}(x)\mathrm{d}x \approx \sum\limits_{i=1}^{n-1} w_{i}f(x_{i})
+\end{equation}
+
+donde $w_{i}$ es el factor de ponderación. Éste proceso define qué elementos del interpolador contribuyen más al momento re realizar la suma. El factor de $h$, el tipo de ponderación y el grado del interpolador están definidos por la figura geométrica que mapea la función. De la misma manera al tener un interpolador de mayor grado, la precisión del método es mayor. Para cada interpolador, existe un término de error analítico que dependerá de las derivadas de la función a evaluar. De manera similar las formulas abiertas de Newton - Cotes, poseen la misma estructura, pero difiere en la forma de tratar el primer elemento del interpolador, cual no es considerado en la contribución del área.
+
+Como defecto del método está la limitación del grado de la función a evaluar. Cuando el grado del interpolador aumenta, el número de oscilaciones en los bordes aumenta también; éste comportamiento es conocido como el fenómeno de Runge. Este fenómeno ocasiona que las áreas debajo la curva en los puntos de mayor oscilación posean un área mucho mayor, generando errores exponenciales.
+
 
 \section{Descripción del método:}
-\label{chapter04:descripcion-del-metodo}
-En este módulo se encuentran los métodos integradores que aproximan la funcion f(x) que se va a integrar por medio de polinomios interpolantes de diferentes grados, donde los métodos varían según el número de puntos o intervalo que se utilice para dicha aproximación permitiendo calcular integrales definidas.
-Existen varios métodos que permiten realizar el proceso de hallar una integral defina y se dividen en este proyecto en las siguientes categorías:
+\label{chapter05:descripcion-del-metodo}
+En este módulo se encuentran los métodos integradores que aproximan la función $f(x)$ que se va a integrar por medio de polinomios interpolantes de diferentes grados, donde los métodos varían según el número de puntos o intervalo que se utilice para dicha aproximación permitiendo calcular integrales definidas. Existen varios métodos que permiten realizar el proceso de hallar una integral defina y se dividen en este proyecto en las siguientes categorías:
 \begin{quote}
 
 \begin{optionlist}{3cm}
-\item [-ClosedNewtonCotes]  
+\item [-ClosedNewtonCotes:]  
 {\color{red}\bfseries{}*}Fournodescotes
 {\color{red}\bfseries{}*}simprule
 {\color{red}\bfseries{}*}tesimprule
 {\color{red}\bfseries{}*}trapzrule
-\item [-CompositeRules]  
+\item [-CompositeRules:]  
 {\color{red}\bfseries{}*}Compmidtrule
 {\color{red}\bfseries{}*}compsimrule
 {\color{red}\bfseries{}*}comptraprule
-\item [-DoubleIntegral]  
+\item [-DoubleIntegral:]  
 {\color{red}\bfseries{}*}Gaussblint
 {\color{red}\bfseries{}*}Simpbdlintg
-\item [-OpenNewtonCotes]  
+\item [-OpenNewtonCotes:]  
 {\color{red}\bfseries{}*}Midpointrule
 {\color{red}\bfseries{}*}Onenodeopn
 {\color{red}\bfseries{}*}Thrnodeopn
 {\color{red}\bfseries{}*}twonodeopn
-\item [-Tripleintegral]  
+\item [-Tripleintegral:]  
 {\color{red}\bfseries{}*}Gausstpllint
+\item [-AdvancedIntegration:]  
+{\color{red}\bfseries{}*}Adapquad
+{\color{red}\bfseries{}*}Romberginted
 \end{optionlist}
-
--Adapquad
--Natspline
--Romberginted
 \end{quote}
 
 
-\chapter{Capitulo 05: Extrapoladores}
-\label{chapter05:capitulo-05-extrapoladores}\label{chapter05::doc}
+\chapter{Capitulo 06: Extrapoladores}
+\label{chapter06:capitulo-06-extrapoladores}\label{chapter06::doc}
 
 \section{Descripción del método:}
-\label{chapter05:descripcion-del-metodo}
+\label{chapter06:descripcion-del-metodo}
 Este módulo se encarga de los métodos de extrapolación, son métodos científico lógicos, que se basan en suponer que el curso de los acontecimientos continuara, es decir, afirma que existen unos axiomas y que estos son extrapolables a una nueva situación. La base de la extrapolación son observaciones secuenciales realizados en periodos conocidos de tiempo, estas observaciones son luego registradas como variables cuantitativas, medidas con algún tipo de escala.\medskip
 
 Se usan para buscar soluciones a problemas lógicos o enseñar la misma pedagogía, lo cual los convierte en una herramienta muy utilizada en el marco
 profesional y de enseñanza, no son necesariamente exclusivos de los métodos de interpolación y tampoco se pueden considerar únicos.
 
 En el marco de los métodos numéricos, los extrapoladores permiten recalcular, a partir de dos aproximaciones, un valor más preciso. Ésta herramienta es la piedra angular de los métodos de cuadratura. Al estar integrado en un método particular, los valores que arroja cada dos iteraciones son refinados. En la próxima iteración se obtiene una nueva aproximación que se refina con el valor extrapolado generando un valor aún más preciso.
-Se cuenta con los siguientes métodos:
-\begin{quote}
+Se cuenta con el siguiente método:
 
--Richarexpol o Extrapolación de Richardson
+\begin{quote}
+\begin{description}
+\item[{-Richarexpol o Extrapolación de Richardson}]
+\end{description}
 \end{quote}
 
+En las técnicas de cuadratura, éste método es ampliamente utilizado. En el caso de la integración numérica se presenta en la integración de Romberg para el refinamiento del n-ésimo ciclo del cálculo, para daca elemento de la aproximación.
 
 \chapter{Documentación e Índice de los métodos - English Ver.}
 \label{code::doc}\label{code:documentacion-e-indice-de-los-metodos-english-ver}
@@ -1187,8 +1344,8 @@ y\_limits = {[}0, 5{]};
 m = 3;
 n = 2;
 function = lambda x,y: y*x*3 + y**2 - x;
-roots = {[}{]};
-coefflist = {[}{]};
+roots = {[}{]}; Here goes the Bessel roots of first kind.
+coefflist = {[}{]}; Here goes the pre-calculated Bessel coefficients.
 
 \end{description}
 
@@ -1242,8 +1399,8 @@ y\_limits = {[}0, 5{]};
 m = 3;
 n = 2;
 function = lambda x,y: y*x*3 + y**2 - x;
-roots = {[}{]};
-coefflist = {[}{]};
+roots = {[}{]}; Here goes the Bessel roots of first kind.
+coefflist = {[}{]}; Here goes the pre-calculated Bessel coefficients.
 
 \end{description}
 
@@ -1280,7 +1437,7 @@ Outputs: hermitcoeff - list object- Hermit interpolant coefficients.
 \begin{description}
 \item[{Example code: domainlist = {[}0 + (x*(10-0)/5)*x**2 for x in range(6){]};}] \leavevmode
 imagelist = {[}0 + (x*(10-0)/5)*x**4 for x in range(6){]};
-derivalist = {[}{]};
+derivalist = {[}{]}; Precomputed derivative list for the function - Use the differentiators submodule.
 
 \end{description}
 
