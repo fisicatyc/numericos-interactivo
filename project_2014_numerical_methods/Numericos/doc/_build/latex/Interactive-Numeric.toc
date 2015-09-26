@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.2.3}M\IeC {\'e}todo de Secante}{7}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Implementaci\IeC {\'o}n del m\IeC {\'e}todo:}{7}{section.2.3}
 \contentsline {section}{\numberline {2.4}Secuencia de llamado:}{7}{section.2.4}
-\contentsline {chapter}{\numberline {3}Capitulo 03: Interpoladores}{9}{chapter.3}
+\contentsline {chapter}{\numberline {3}Capitulo 03: Interpolaci\IeC {\'o}n}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}Interpolaci\IeC {\'o}n de Newton}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Interpolaci\IeC {\'o}n de Lagrange}{9}{section.3.2}
 \contentsline {section}{\numberline {3.3}Splines}{10}{section.3.3}
@@ -19,15 +19,15 @@
 \contentsline {subsection}{\numberline {3.3.2}Splines de segundo grado}{10}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Splines de tercer grado}{11}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{12}{section.3.4}
-\contentsline {chapter}{\numberline {4}Capitulo 04: Diferenciadores}{13}{chapter.4}
+\contentsline {chapter}{\numberline {4}Capitulo 04: Diferenciaci\IeC {\'o}n}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Diferenciaci\IeC {\'o}n num\IeC {\'e}rica}{13}{section.4.1}
 \contentsline {section}{\numberline {4.2}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{15}{section.4.2}
-\contentsline {chapter}{\numberline {5}Capitulo 05: Integradores}{17}{chapter.5}
+\contentsline {chapter}{\numberline {5}Capitulo 05: Integraci\IeC {\'o}n}{17}{chapter.5}
 \contentsline {section}{\numberline {5.1}Integraci\IeC {\'o}n Num\IeC {\'e}rica}{17}{section.5.1}
 \contentsline {section}{\numberline {5.2}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{18}{section.5.2}
-\contentsline {chapter}{\numberline {6}Capitulo 06: Extrapoladores}{19}{chapter.6}
+\contentsline {chapter}{\numberline {6}Capitulo 06: Extrapolaci\IeC {\'o}n}{19}{chapter.6}
 \contentsline {section}{\numberline {6.1}Descripci\IeC {\'o}n del m\IeC {\'e}todo:}{19}{section.6.1}
-\contentsline {chapter}{\numberline {7}Documentaci\IeC {\'o}n e \IeC {\'I}ndice de los m\IeC {\'e}todos - English Ver.}{20}{chapter.7}
+\contentsline {chapter}{\numberline {7}Documentaci\IeC {\'o}n e \IeC {\'I}ndice de los m\IeC {\'e}todos - ENGLISH VERSION}{20}{chapter.7}
 \contentsline {section}{\numberline {7.1}adapquad.py}{20}{section.7.1}
 \contentsline {section}{\numberline {7.2}beziercurve.py}{20}{section.7.2}
 \contentsline {section}{\numberline {7.3}bisection.py}{21}{section.7.3}
@@ -48,9 +48,9 @@
 \contentsline {section}{\numberline {7.18}nevilletable.py}{27}{section.7.18}
 \contentsline {section}{\numberline {7.19}newtondivdef.py}{28}{section.7.19}
 \contentsline {section}{\numberline {7.20}nfirstderv.py}{28}{section.7.20}
-\contentsline {section}{\numberline {7.21}nsecondderv.py}{29}{section.7.21}
+\contentsline {section}{\numberline {7.21}nsecondderv.py}{28}{section.7.21}
 \contentsline {section}{\numberline {7.22}onenodeopn.py}{29}{section.7.22}
-\contentsline {section}{\numberline {7.23}polyroot.py}{30}{section.7.23}
+\contentsline {section}{\numberline {7.23}polyroot.py}{29}{section.7.23}
 \contentsline {section}{\numberline {7.24}QCDA.py}{30}{section.7.24}
 \contentsline {section}{\numberline {7.25}regulafalsi.py}{30}{section.7.25}
 \contentsline {section}{\numberline {7.26}richarexpol.py}{31}{section.7.26}
@@ -65,4 +65,4 @@
 \contentsline {section}{\numberline {7.35}thrnodeopn.py}{35}{section.7.35}
 \contentsline {section}{\numberline {7.36}trapzrule.py}{35}{section.7.36}
 \contentsline {section}{\numberline {7.37}twonodeopn.py}{36}{section.7.37}
-\contentsline {chapter}{Python Module Index}{38}{section*.3}
+\contentsline {chapter}{Python Module Index}{37}{section*.3}

@@ -179,9 +179,9 @@ El repositorio vigente del proyecto puede encontrarse en \textit{GitHub} en el v
 
 \href{https://github.com/fisicatyc/numericos-interactivo}{https://github.com/fisicatyc/numericos-interactivo}
 
-El proyecto se encuentra como código abierto y está a disposición para ser mejorado, modificado y expandido sin ningún tipo de restricción bajo la licencia \textit{GNU}. Los respectivos créditos han de hacerse al desarrollo original por parte del Semillero de Física Teórica - Universidad EAFIT. La contribución directa puede realizarse a través de la plataforma \textit{GitHub}.
+El proyecto se encuentra como código abierto y está a disposición para ser mejorado, modificado y expandido sin ningún tipo de restricción bajo la licencia \textit{MIT}. Los respectivos créditos han de hacerse al desarrollo original por parte del Semillero de Física Teórica - Universidad EAFIT. La contribución directa puede realizarse a través de la plataforma \textit{GitHub}.
 
-El repositorio, posee tanto los códigos fuentes, como los \textit{Ipython Notebooks} de algunos de los algoritmos. En los \textit{notebooks} se hace una revisión conceptual y explicación del funcionamiento, limitaciones de los métodos, posibles aplicaciones junto con una puesta en marcha de los algoritmos a través de la visualización y tabulación de datos dinámicos, a partir de los datos que ingrese el usuario.
+El repositorio, posee tanto los códigos fuentes, como los \textit{IPython Notebooks} de algunos de los algoritmos. En los \textit{notebooks} se hace una revisión conceptual y explicación del funcionamiento, limitaciones de los métodos, posibles aplicaciones junto con una puesta en marcha de los algoritmos a través de la visualización y tabulación de datos dinámicos, a partir de los datos que ingrese el usuario.
 
 Los \textit{notebooks} están diseñados para instruir y cautivar estudiantes universitarios en las áreas de ciencias de la computación y ciencias matemáticas para favorecer el aprendizaje conceptual, junto con las habilidades de programación. Ésta material adicional no es necesario para ejecutar las librerías.
 
@@ -189,18 +189,18 @@ Los \textit{notebooks} están diseñados para instruir y cautivar estudiantes un
 
 \begin{quote}
 El proyecto fue desarrollado utilizando las funciones Built-In de \textit{Python 3.4} por lo que no es
-necesario otro tipo paquetes para su funcionamiento. Recomendamos la distribución multiplataforma \textit{Anaconda} para \textit{Python} \href{https://store.continuum.io/cshop/anaconda/}{https://store.continuum.io/cshop/anaconda/}, para obtener el paquete de utilidades básicos para poder utilizar \textit{Ipython Notebook} y \textit{Python 3.4}.
+necesario otro tipo paquetes para su funcionamiento. Recomendamos la distribución multiplataforma \textit{Anaconda} para \textit{Python} \href{https://store.continuum.io/cshop/anaconda/}{https://store.continuum.io/cshop/anaconda/}, para obtener el paquete de utilidades básicos para poder utilizar \textit{IPython Notebook} y \textit{Python 3.4}.
 \end{quote}
 
 \textbf{Adquisición del código}
 
 \begin{quote}
-Para obtener acceso a los archivos del repositorio es posible descargar como \textit{zip} directamente los archivos del proyecto y localizarlos en cualquier directorio. Asimismo se puede disponer acceso al registrarse gratuitamente en \textit{GitHub} y crear un clon del repositorio. Otra manera está en cargar directamente las librerías con la función de \textit{python} $\% load$ y la respectiva URL del código.
+Para obtener acceso a los archivos del repositorio es posible descargar como \textit{zip} directamente los archivos del proyecto y localizarlos en cualquier directorio. Asimismo se puede disponer acceso al registrarse gratuitamente en \textit{GitHub} y crear un clon del repositorio. Otra manera está en cargar directamente las librerías con la función de \textit{Python} $\% load$ y la respectiva URL del código.
 \end{quote}
 
 \textbf{Cargar las librerías en \textit{Python}}
 \begin{quote}
-Para cargar las librerías desde cualquier consola de \textit{python}, es necesario trabajar sobre el mismo directorio donde se encuentre el módulo $Numericos$. Una vez en éste directorio es posible ejecutar la linea de código:
+Para cargar las librerías desde cualquier consola de \textit{Python}, es necesario trabajar sobre el mismo directorio donde se encuentre el módulo $Numericos$. Una vez en éste directorio es posible ejecutar la linea de código:
 
 	\begin{verbatim}
 	from Numericos import Numericos
@@ -511,8 +511,8 @@ from Numericos.lib.rootFinders import muller
 De ésta manera solamente el método de Müller esta disponible para operar. Ésta forma simplifica la forma de llamado.
 
 
-\chapter{Capitulo 03: Interpoladores}
-\label{chapter03::doc}\label{chapter03:capitulo-03-Interpoladores}
+\chapter{Capitulo 03: Interpolación}
+\label{chapter03::doc}\label{chapter03:capitulo-03-Interpolación}
 
 \noindent En general, para las aplicaciones de la ingeniería y de la investigación aplicada, sera necesario partir de información obtenida experimentalmente, lo que traduce en que la información que poseemos no es una función continua que describe el fenómeno sino de un conjunto de puntos cuya única relación inicial es que fueron obtenidos de un mismo experimento u observación de un fenómeno. El paso siguiente a partir de la obtención de estos puntos, es la obtención de una curva que describa adecuadamente los puntos (ya sea aproximándolos -curvas de regresión- o atravesándolos -curvas interpolantes-) y a partir de las cuales sea posible
 construir modelos matemáticos para la descripción del fenómeno y permitan realizar predicciones acerca del mismo (al igual que estudiar el comportamiento para las condiciones no obtenidas experimentalmente). En cuanto a la interpolación, se recurre generalmente a la interpolación polinomial.\medskip
@@ -707,14 +707,16 @@ Se encuentran los siguientes métodos interpoladores:
 Cada uno de éstos métodos requieren variaciones en las entradas del algoritmo por lo que se sugiere verificar la documentación directa de las funciones, visitando los anteriores vínculos señalados en el texto.
 
 
-\chapter{Capitulo 04: Diferenciadores}
-\label{chapter04::doc}\label{chapter04:capitulo-04-diferenciadores}
+\chapter{Capitulo 04: Diferenciación}
+\label{chapter04::doc}\label{chapter04:capitulo-04-Diferenciación}
 
 \section{Diferenciación numérica}
 \label{chapter04:Diferenciación numérica}
 
-En este módulo se aplican los métodos diferenciadores o también conocidos como diferencias finitas. Se van a categorizar como diferencias centradas y no centradas, donde la primera define un conjunto de métodos numéricos en diferencias finitas con paso centrado. Y en los métodos no centrados se define un conjunto de métodos numéricos basándose en diferencias finitas SIN paso centrado.
+En este módulo se aplican los métodos diferenciación numérica o también conocidos como diferencias finitas. Se van a categorizar como diferencias centradas y no centradas, donde la primera define un conjunto de métodos numéricos en diferencias finitas con paso centrado. Y en los métodos no centrados se define un conjunto de métodos numéricos basándose en diferencias finitas sin paso centrado.
+
 Estas técnicas se emplean muy a menudo en análisis numérico, especialmente en ecuaciones numéricas ordinarias, ecuaciones en diferencias y ecuaciones.
+
 En derivadas parciales. Las aplicaciones habituales suelen ser en los campos de la computación, áreas de la ingeniería térmica o en la Mecánica de fluidos.
 
 La diferenciación numérica retoma dos elementos principales, los cambios absolutos entre dos puntos de una función real y la expansión en series de Taylor. La diferencia absoluta entre dos puntos de una función real, determina el comportamiento de la pendiente de manera local.  En el caso de una recta, la pendiente es determinada como el cociente entre las variaciones de la imagen de la función y su dominio, de la forma:
@@ -788,7 +790,7 @@ La diferenciación numérica se encarga de evidenciar los cambios locales de una
 \section{Descripción del método:}
 \label{chapter04:descripción-del-método}
 
-Respecto a la implementación realizada los siguientes diferenciadores, utilizan la formulación de la sección previa, para encontrar las derivadas locales de una función. La implementación también articula la expansión centrada y no centrada. En ambos casos una función analítica es ingresada como objeto lambda de \textit{python}. Ésta función definida en el intervalo de derivación entre $A$ y $B$ se le asocia un valor de $h$ para generar un mapeo entre éstos puntos y calcular punto a punto las derivadas numéricas. Por tanto el resultado será una lista con éstos datos.
+Respecto a la implementación realizada los siguientes derivadores, utilizan la formulación de la sección previa, para encontrar las derivadas locales de una función. La implementación también articula la expansión centrada y no centrada. En ambos casos una función analítica es ingresada como objeto lambda de \textit{Python}. Ésta función definida en el intervalo de derivación entre $A$ y $B$ se le asocia un valor de $h$ para generar un mapeo entre éstos puntos y calcular punto a punto las derivadas numéricas. Por tanto el resultado será una lista con éstos datos.
 
 Adicionalmente para el caso en que se tenga los datos de una función interpolada, estos datos pueden ser utilizados para ser calcular las derivadas de éstos. Sin embargo tanto en el caso de la función como en el caso de los datos, se requiere tener en cuenta que para una mejor precisión, el intervalo de diferenciación no ha de ser muy grande y asimismo, tener presente que las derivadas de orden superior expandidas son mucho más propensas en la pérdida de precisión, que las primeras dos derivadas. Para ésto se puede utilizar valores muy cercanos o en su defecto una expansión de derivas de contengan mayores términos para ganar mayor precisión, sin embargo ésto último no es una práctica común.
 
@@ -822,8 +824,8 @@ Se encuentran los siguientes métodos diferenciadores no centrados:
 
 Para los ordenes superiores de diferenciación, no se recomienda utilizar ésta versión no centrada por la propagación del error, ya que en éste caso el factor $h$ de potencia uno otorga más peso en las contribuciones de los $TOS$, aumentando el error de truncamentiento.
 
-\chapter{Capitulo 05: Integradores}
-\label{chapter05::doc}\label{chapter05:capitulo-05-integradores}
+\chapter{Capitulo 05: Integración}
+\label{chapter05::doc}\label{chapter05:capitulo-05-integración}
 
 \section{Integración Numérica}
 \label{chapter05:Integración Numérica}
@@ -878,7 +880,7 @@ En este módulo se encuentran los métodos integradores que aproximan la funció
 \end{quote}
 
 
-\chapter{Capitulo 06: Extrapoladores}
+\chapter{Capitulo 06: Extrapolación}
 \label{chapter06:capitulo-06-extrapoladores}\label{chapter06::doc}
 
 \section{Descripción del método:}
@@ -899,7 +901,7 @@ Se cuenta con el siguiente método:
 
 En las técnicas de cuadratura, éste método es ampliamente utilizado. En el caso de la integración numérica se presenta en la integración de Romberg para el refinamiento del n-ésimo ciclo del cálculo, para daca elemento de la aproximación.
 
-\chapter{Documentación e Índice de los métodos - English Ver.}
+\chapter{Documentación e Índice de los métodos - ENGLISH VERSION}
 \label{code::doc}\label{code:documentacion-e-indice-de-los-metodos-english-ver}
 
 \section{adapquad.py}
@@ -999,11 +1001,10 @@ t ; tolerance of calculation
 
 output= x ; the aproximated value of x such that f(x)=0
 
-version: 1.01 for python 2.7
+version: 1.01 for Python 2.7
 
 fast\_Code: bisection((`6*x-6'),-5,6,200,0.005);
 
-author: JJ.Cadavid - SFTC - EAFIT University
 date: 24/08/2014.
 
 
@@ -1256,8 +1257,6 @@ Outputs: Aproximate solution X or message of failure
 Quick Code: fixedpoint(`(1.0/2.0)*((10.0-x**3)**(1.0/2.0))',1.5,3,10**-8)
 
 Version: 1.0
-
-Author: Sebastián Castaño y Felipe Lopez - SFTC - EAFIT University
 
 
 \section{fournodescotes.py}
@@ -1835,7 +1834,7 @@ Date: 28/12/2014.
 
 \section{polyroot.py}
 \label{code:polyroot-py}\label{code:module-polyroot}\index{polyroot (module)}
-Description: class numecinteg is a small class type python program used as 
+Description: class numecinteg is a small class type Python program used as 
 a prototipe algorithm. It's actual function is to represent a polynomial from
 a set of coefficients. The second feature is finding it's roots by applying
 Horner's algorithm.
@@ -1925,8 +1924,6 @@ Outputs: Aproximate solution X or message of failure
 Quick Code: fixedpoint(`(1.0/2.0)*((10.0-x**3)**(1.0/2.0))',1.5,3,10**-8)
 
 Version: 1.0
-
-Author: Sebastián Castaño y Felipe Lopez - SFTC - EAFIT University
 
 
 \section{richarexpol.py}
@@ -2062,8 +2059,6 @@ Outputs: Aproximate solution X or message of failure
 Quick Code: secant(`math.cos(x)-x',0.5,math.pi/4,5*10**-8,20)
 
 Version: 1.0
-
-Author: Sebastián Castaño - SFTC - EAFIT University
 
 
 \section{simpdblintg.py}

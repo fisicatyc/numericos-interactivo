@@ -4,20 +4,20 @@
 \BOOKMARK [1][-]{section.2.2}{M\351todos Abiertos}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{Implementaci\363n del m\351todo:}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.4}{Secuencia de llamado:}{chapter.2}% 6
-\BOOKMARK [0][-]{chapter.3}{Capitulo 03: Interpoladores}{}% 7
+\BOOKMARK [0][-]{chapter.3}{Capitulo 03: Interpolaci\363n}{}% 7
 \BOOKMARK [1][-]{section.3.1}{Interpolaci\363n de Newton}{chapter.3}% 8
 \BOOKMARK [1][-]{section.3.2}{Interpolaci\363n de Lagrange}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.3}{Splines}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.4}{Descripci\363n del m\351todo:}{chapter.3}% 11
-\BOOKMARK [0][-]{chapter.4}{Capitulo 04: Diferenciadores}{}% 12
+\BOOKMARK [0][-]{chapter.4}{Capitulo 04: Diferenciaci\363n}{}% 12
 \BOOKMARK [1][-]{section.4.1}{Diferenciaci\363n num\351rica}{chapter.4}% 13
 \BOOKMARK [1][-]{section.4.2}{Descripci\363n del m\351todo:}{chapter.4}% 14
-\BOOKMARK [0][-]{chapter.5}{Capitulo 05: Integradores}{}% 15
+\BOOKMARK [0][-]{chapter.5}{Capitulo 05: Integraci\363n}{}% 15
 \BOOKMARK [1][-]{section.5.1}{Integraci\363n Num\351rica}{chapter.5}% 16
 \BOOKMARK [1][-]{section.5.2}{Descripci\363n del m\351todo:}{chapter.5}% 17
-\BOOKMARK [0][-]{chapter.6}{Capitulo 06: Extrapoladores}{}% 18
+\BOOKMARK [0][-]{chapter.6}{Capitulo 06: Extrapolaci\363n}{}% 18
 \BOOKMARK [1][-]{section.6.1}{Descripci\363n del m\351todo:}{chapter.6}% 19
-\BOOKMARK [0][-]{chapter.7}{Documentaci\363n e \315ndice de los m\351todos - English Ver.}{}% 20
+\BOOKMARK [0][-]{chapter.7}{Documentaci\363n e \315ndice de los m\351todos - ENGLISH VERSION}{}% 20
 \BOOKMARK [1][-]{section.7.1}{adapquad.py}{chapter.7}% 21
 \BOOKMARK [1][-]{section.7.2}{beziercurve.py}{chapter.7}% 22
 \BOOKMARK [1][-]{section.7.3}{bisection.py}{chapter.7}% 23
