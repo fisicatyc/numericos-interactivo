@@ -37,18 +37,23 @@
     Date: 28/12/2014.
 """
 
-def FCDA(n, lowerlimit, upperlimit, function):
+def FCDA(n,lowerlimit, upperlimit, function, x, flag = False):
     test = lambda: None;
     if isinstance(function,type(test)) == 0:
         raise Exception("function must be lambda object-type");
-        
+     
     h = upperlimit-lowerlimit;
-    x_array = [x*h/n for x in range(n)];
-    x_array.remove(x_array[0]);
-
-    diff_array = [0]*(n - 1);             
+    hc = h/(n-1);
     
-    for i in range(n-2):
-        diff_array[i] = (function(x_array[i] + h) - \
+    if flag:
+        arrayStart = lowerlimit;
+        x_array = [arrayStart + hc*x for x in range(n)];
+        diff_array = [0]*n;             
+    
+        for i in range(n):
+            diff_array[i] = (function(x_array[i] + h) - \
                         function(x_array[i] - h))/2*h;
+    else:
+        diff_array = (function(x + h) - \
+                        function(x - h))/2*h;
     return(diff_array);
